@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Claim</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Claims</value>
+    </caseValues>
+    <fields>
+        <label><!-- Claim # --></label>
+        <name>ClaimNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Description --></label>
+        <name>Claim_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Name --></label>
+        <name>Claim_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Status --></label>
+        <name>Claim_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pend</masterLabel>
+            <translation><!-- Pend --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Claims__c</name>
+        <relationshipLabel><!-- Claims --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost of Claim --></label>
+        <name>Cost_of_Claim__c</name>
+    </fields>
+    <fields>
+        <label><!-- Services Provided --></label>
+        <name>Services_Provided__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

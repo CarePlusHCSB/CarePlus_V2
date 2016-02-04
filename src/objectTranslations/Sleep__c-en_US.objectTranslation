@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sleep Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sleep Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Sleep Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Asleep Time --></label>
+        <name>Asleep_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awake For --></label>
+        <name>Awake_For__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awake Time --></label>
+        <name>Awake_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awakenings --></label>
+        <name>Awakenings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Light Sleep --></label>
+        <name>Light_Sleep__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality --></label>
+        <name>Quality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smart Alarm Fired --></label>
+        <name>Smart_Alarm_Fired__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sound Sleep --></label>
+        <name>Sound_Sleep__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Type --></label>
+        <name>Sub_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunrise --></label>
+        <name>Sunrise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunset --></label>
+        <name>Sunset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Completed --></label>
+        <name>Time_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Created --></label>
+        <name>Time_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Updated --></label>
+        <name>Time_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timezone --></label>
+        <name>Timezone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

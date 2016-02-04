@@ -1,0 +1,83 @@
+<apex:page sidebar="false" showHeader="false"  controller="myMembersCtrl1">
+<apex:form >
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleM{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleM1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+      
+<!--new code Lightning for Member overview-->
+<apex:include pageName="CarePlus_Global_header_1"/>
+        <div class="slds">
+            <div class="slds-card" style="background-color: rgb(33,156,215);width:1424px;">
+                <div class="slds-card__header slds-grid" style="background-color: rgb(33,156,215);">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                  <span class="headerTitleC">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" >
+                        <!--<use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>-->
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_case"></use> new_case
+                        </svg></span>
+                    </div>  </span>  <span class="headerTitleM1">
+                      <div class="slds-media__body" style="background-color: rgb(33,156,215);">
+                      <span class="slds-truncate"><b>My Members</b>                         
+                      </span>
+                     </div></span>
+                  </div>
+                </div>
+               
+     
+             
+          <div class="slds-media__body" style="background-color: rgb(33,156,215);">      
+                  
+       
+       <table>
+     
+       
+       <apex:repeat value="{!viewAllMembers}" var="c1">
+         <tr>
+       <td>
+       <a href="/apex/CarePlus_ViewMemberInfo_withHeader?id={!c1.Id}" style="text-decoration:none;">
+       <div style=" height: 100px; width:100px;">
+        <span class ="slds-avatar slds-avatar--large" ><apex:outputText value="{!c1.profilePic__c}" escape="false" style="height:30px;width:30px;"/>
+        </span>
+      <span class="slds-truncate" style="color: #fff;"> {!c1.Name} </span>
+      </div></a>
+       </td>
+       </tr>
+       </apex:repeat>
+       
+       
+   
+    
+       </table>
+           
+          
+                
+               </div>      
+            </div>             
+          </div>  
+          
+             
+</html>  
+</apex:form>  
+</apex:page>

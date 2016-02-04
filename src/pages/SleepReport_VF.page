@@ -1,0 +1,43 @@
+<apex:page sidebar="false" showHeader="false">
+<style>
+
+.headerTitle4{
+//font-family: arial, sans-serif;
+font-size: 14px;
+//font-style: bold; 
+//font-weight: 600;
+color: rgb(33,156,215);
+text-align: Center;
+//text-transform: uppercase;
+//background: rgb(33,156,215);
+display: block;
+padding: 10px;
+//margin:0.2em;
+//width: 400px;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<center>
+<table >
+<br/>
+<tr >
+<th>
+<span class="headerTitle4">
+     <h2>Heart Rate Monitor</h2>
+</span>
+</th>
+<th/>
+<th>
+<span class="headerTitle4">
+     <h2>Sleep Tracker</h2>
+</span>
+</th>
+</tr>
+<tr><td valign="top"><apex:image value="https://c.cs41.content.force.com/servlet/servlet.FileDownload?file=01555000000fckP" width="470" height="390"/></td>
+<td width="2px"></td>
+<td width="300px" height="200px"><analytics:reportChart reportId="00O55000000Jaj5"></analytics:reportChart></td></tr>
+
+</table>
+</center>
+</apex:page>

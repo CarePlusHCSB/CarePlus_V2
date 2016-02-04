@@ -1,0 +1,9 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account" >
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+       <!--  <apex:pageMessage summary="No Account associated with this Case.." severity="Info" strength="1" rendered="{!IF(Case.AccountId==null,true,false)}"/> -->
+        <apex:iframe src="/apex/PreviewPage1?id={!caseId}" scrolling="true" id="Iframe1" width="50%" />        
+    <!--    <apex:iframe src="/apex/PreviewPage2?id={!caseId}" scrolling="true" id="Iframe2" width="50%" />-->
+         <apex:iframe src="/apex/EmailAttachemntPDF?id={!caseId}" scrolling="true" id="Iframe2" width="50%" />
+    </apex:form>
+</apex:page>

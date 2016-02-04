@@ -1,0 +1,73 @@
+<apex:page controller="taskcontroller" showHeader="false" >
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+<div class="slds" >
+<div class="slds-card" style="color:white;padding:10px;background:rgb(33,156,215);height:300px;">
+     <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                  <span class="headerTitleC">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-contract">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--medium" >
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#email"></use>
+                        </svg></span>
+                    </div>  </span>  <span class="headerTitleM1">
+                      <div class="slds-media__body" style="background-color: rgb(33,156,215);">
+                      <span class="slds-truncate"> <b> My Inbox</b>
+                      </span>
+                     </div></span>
+                  </div>
+                  <br/>
+                
+<apex:datatable value="{!Mydetails}" var="details">
+
+<apex:column width="200">
+     <apex:facet name="header"><span class="slds-text-body--small" style="color: #fff;"><b>Subject</b></span></apex:facet>
+     <div style="height:30px;color :#fff;" class="slds-text-body--small">
+     <apex:outputLink value="/{!details.id}" >
+     <!-- <span style="color:white"><apex:outputText value="{!details.Subject}"/></span>-->
+    <!-- <span style="color:white"><apex:outputText value="{!LEFT(details.Subject,13)}.."/></span>-->
+        <span style="color:white"><apex:outputText value="{!(details.Subject)}"/></span>
+      </apex:outputLink>
+      </div>
+ </apex:column>
+               
+    <apex:column width="150">
+     <apex:facet name="header"><span class="slds-text-body--small" style="color: #fff;"><b>Related To</b></span></apex:facet>
+      <div style="height:30px;color :#fff;" class="slds-text-body--small">
+      <apex:outputText value="{!details.what.name}"/>
+      </div>
+         </apex:column>
+         
+          <apex:column width="125">
+       <apex:facet name="header"><span class="slds-text-body--small" style="color: #fff;"><b>Date</b></span></apex:facet>
+       <div style="height:30px;color :#fff" class="slds-text-body--small">
+       <apex:outputField value="{!details.ActivityDate}"/>
+       </div>
+         </apex:column>
+         
+         
+          <apex:column width="125">
+         <apex:facet name="header"><span class="slds-text-body--small" style="color: #fff;"><b>Status</b></span></apex:facet>
+         <apex:outputPanel rendered="{!IF(details.Status!='Completed',true,false)}">
+         <apex:outputLink value="/{!details.id}/e?close=1&retURL=%2Fhome%2Fhome.jsp%3Fsdtd%3D1" >
+         <apex:image url="{!urlFOR('/resource/1294667510000/Wrong')}" width="17" height="20"/> 
+         </apex:outputLink>
+            </apex:outputPanel>
+            </apex:column>
+         
+        
+         
+   <!--  <apex:column width="400px">
+     <apex:facet name="header"><span class="slds-text-body--small" style="color: #fff;"><b>&nbsp;Member</b></span></apex:facet>
+     <div style="height:30px;color :#fff" class="slds-text-body--small">
+      <apex:outputText value="{!details.who.name}"/>
+      </div>
+         </apex:column>
+         -->
+
+        </apex:datatable>
+</div>
+</div>
+</html>
+</apex:page>

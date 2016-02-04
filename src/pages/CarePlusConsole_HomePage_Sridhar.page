@@ -1,0 +1,121 @@
+<apex:page sidebar="false" showHeader="false" standardController="Case"  extensions="HompageCtrl">
+
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+.headerTitleCPDW{
+font-size: 14px;
+color: #fff!important;
+text-align: left;
+background: rgb(33,156,215);
+display: block;
+padding: 8px;
+margin-top:1px;
+}
+</style>
+</head>
+
+<body style="background-color: rgb(161,221,243);">
+<apex:include pageName="CarePlus_Global_header_1"/>
+<div class="slds">
+
+<table width="1420" height="265" style="table-layout: fixed;">
+  <tr>
+    <td width="340" height="259" valign="top">
+    
+         <div style="display:block;height:200px;width:200px;">
+                    
+                       <apex:outputText value="{!currentprofilepic}" escape="false" />
+                       </div>
+          <div style="padding:10px;">             
+         <span style="font-size: 16px;color: rgb(33,156,215);font-family: arial, sans-serif;"><b>{!currentusername}</b></span>
+        <br/>
+        <span style="font-size: 14px;color: rgb(33,156,215);font-family: arial, sans-serif;"><b>{!currentuserrole}</b></span>
+        </div>
+    
+    </td>
+    <td width="361" valign="top"><apex:include pageName="Mymembers1" />
+    </td>
+    <td width="361" valign="top">
+    <apex:include pageName="Mycases1" />
+    </td>
+    <td width="361" valign="top">
+    <apex:include pageName="CareManager_Tree_dreamweaver_homepage"/>
+    </td>
+  </tr>
+</table>
+    
+    
+<table width="1420" style="table-layout: fixed;">
+  <tr>
+    <td width="340" height="25%" valign="top">
+       <table>
+    <tr>
+    <td width="340" valign="top">
+       <div class="slds-card" style="background-color: rgb(33,156,215); padding:15px; height:342px;">
+        
+        <svg aria-hidden="true" class="slds-icon slds-icon-standard-event slds-icon--medium">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#insights"></use>
+        </svg>
+        
+        <span class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;My Calendar </b> </span>
+        
+          <b> <apex:include pageName="MyCalendar"/> </b> 
+           </div>
+           </td>
+          </tr>
+          
+          <tr>
+          <td width="340" valign="top">
+          <div class="slds-card" style="background-color: rgb(33,156,215); padding:15px;height:300px;">
+        
+        <svg aria-hidden="true" class="slds-icon slds-icon-standard-account slds-icon--medium">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#announcement"></use>
+        </svg>
+        
+        <span class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;Messaging and Alerts </b> </span>
+            <b>  <apex:include pageName="MsgngNAlerts"/> </b>
+            </div>
+            </td>
+            </tr>
+             </table>
+    </td>
+    <td width="1080" valign="top" height="25">
+    <apex:include pageName="Myreports_1"/>
+    </td>
+  </tr>
+  </table>
+  
+  <table width="1420" style="table-layout: fixed;" >
+ <tr>
+    <td width="620" valign="top">
+      <apex:include pageName="CarePlus_task"/> 
+    </td>
+  <td width="800" valign="top" >
+  
+       <div class="slds-card" style="background-color: rgb(33,156,215); padding:15px; height:300px;">
+        
+        <svg aria-hidden="true" class="slds-icon slds-icon-standard-event slds-icon--medium">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#chat"></use>
+        </svg>
+        
+        <span class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;Chatter </b> </span>
+      
+       <apex:iframe src="/apex/Chatter_sridhar" scrolling="true" height="250"  />
+       </div>
+    </td>
+    </tr>
+    </table> 
+  
+
+</div>
+</body>
+</html>
+
+
+</apex:page>

@@ -1,0 +1,79 @@
+<apex:page controller="ViewMemberCtrl" action="{!getMemberGoal}" tabStyle="Account" sidebar="false" showHeader="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleCP{
+
+font-size: 14px;
+color: #fff!important;
+text-align: left;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+}
+.buttonclass{
+color:white !important;
+background:rgb(33,156,215) !important;
+
+}
+</style>
+
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+   <!-----using Lightning Design system----->
+      
+<Div class="slds">
+
+                  
+            <apex:pageblock >
+        
+        <div class="slds-media__body" >
+                  <span class="headerTitleCP">
+                  Goals</span>
+                  </div>
+        
+        <div class="slds-text-body--small" >
+        <apex:pageBlockTable value="{!goalLst}" var="g">
+          
+          <apex:column value="{!g.Outcome_Status2__c}" headerValue="Outcome"/>
+                   
+          <apex:column headerValue="Care Plan"> <a href="/{!g.Id}?isdtp=vw" style="text-decoration: none;" target="_blank"> {!g.Name}</a>
+          </apex:column>
+                
+          
+          <apex:column value="{!g.Intervention__c}" headerValue="Intervention" />
+            
+           
+
+        </apex:pageBlockTable> 
+        </div>
+        <apex:form >
+        <br/>
+       <center>  <apex:commandButton value="Set a Goal" action="{!createGoal}"  styleClass="buttonclass"/></center>
+        </apex:form>
+        
+        <br/>
+        
+
+         <div class="slds-media__body" >
+                  <span class="headerTitleCP">
+                  Past Goals</span>
+                                    </div>
+         <div class="slds-text-body--small" >
+         <apex:pageBlockTable value="{!goalCloseLst}" var="gc" styleClass="container">
+        
+          <apex:column value="{!gc.Outcome_Status2__c}" />
+          <apex:column headerValue="Care Plan"> <a href="/{!gc.Id}?isdtp=vw" style="text-decoration: none;" target="_blank"> {!gc.Name}</a>
+          </apex:column>
+          
+          <apex:column value="{!gc.Intervention__c}"/>
+
+
+        </apex:pageBlockTable> 
+        </div>
+        
+            </apex:pageblock>
+
+</div>
+
+</html>                                                         
+</apex:page>

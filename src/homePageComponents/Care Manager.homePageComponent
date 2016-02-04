@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;p&gt;&lt;b&gt;&amp;lt;html&amp;gt;&lt;br&gt;&amp;lt;br&amp;gt;&amp;lt;iframe src=&amp;quot;/apex/CareManager_Tree_dreamweaver&amp;quot; width=&amp;quot;100%&amp;quot; frameborder=&amp;quot;0&amp;quot; height=&amp;quot;600px&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;br&amp;gt;&lt;br&gt;&amp;lt;/html&amp;gt;&lt;/b&gt;&lt;/p&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

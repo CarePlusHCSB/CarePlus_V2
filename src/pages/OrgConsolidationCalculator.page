@@ -1,0 +1,77 @@
+<apex:page standardController="Questions__c">
+
+<apex:image id="theImage" value="{!$Resource.Calculator}" />
+<apex:tabPanel >
+<apex:tab label="Process & Goverance" name="Process & Goverance" id="PG">
+<table style="width:100%">
+  
+<tr>
+    <td>Is there need to standardize process across the Orgs?</td>
+    <td>Yes</td> 
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>What is the level of Localization on the Orgs?</td>
+    <td>High</td> 
+    <td>5</td>
+  </tr>
+    <tr>
+    <td>How many GEOs do you support?</td>
+    <td>5</td> 
+    <td>1</td>
+  </tr>
+
+ 
+</table>
+</apex:tab>﻿
+
+<apex:tab label="Total Cost of Ownership" name="TCO" id="TCO">
+<table style="width:100%">
+  
+<tr>
+    <td>Is there need to standardize process across the Orgs?</td>
+    <td>Yes</td> 
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>What is the level of Localization on the Orgs?</td>
+    <td>High</td> 
+    <td>5</td>
+  </tr>
+    <tr>
+    <td>How many GEOs do you support?</td>
+    <td>5</td> 
+    <td>1</td>
+  </tr>
+
+ 
+</table>
+</apex:tab>﻿
+
+<apex:tab label="Performance & Scalability" name="Performance & Scalability" id="PS">
+<table style="width:100%">
+  
+<tr>
+    <td>Is there need to standardize process across the Orgs?</td>
+    <td>Yes</td> 
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>What is the level of Localization on the Orgs?</td>
+    <td>High</td> 
+    <td>5</td>
+  </tr>
+    <tr>
+    <td>How many GEOs do you support?</td>
+    <td>5</td> 
+    <td>1</td>
+  </tr>
+
+ 
+</table>
+</apex:tab>﻿
+
+
+</apex:tabPanel>
+ 
+</apex:page>

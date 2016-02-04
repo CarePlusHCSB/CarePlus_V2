@@ -1,0 +1,104 @@
+<apex:page sidebar="false" showHeader="false" standardController="Case" extensions="HompageCtrl">
+<apex:form >
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleM{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleM1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+      
+<!--new code Lightning for Member overview-->
+
+<div class="slds">
+<div class="slds-card" style="background-color: rgb(33,156,215);">
+<table width="1080" height="1%" style="table-layout: fixed;">
+                <div class="slds-card__header slds-grid" style="background-color: rgb(33,156,215);">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                 <span class="headerTitleC">
+                  <div class="slds-media__figure">
+                        
+                          <span  class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"> 
+                          <svg aria-hidden="true" class="slds-icon slds-icon-standard-product slds-icon--small">
+                          <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#poll"></use>
+                    </svg>
+                         <b> &nbsp;&nbsp; Reports </b> </span>
+                      </div>   
+                      </span>
+                  </div>
+                  </div>
+                                       
+</table>
+<table width="1080" height="310" style="table-layout: fixed;" >
+<tr>
+<td width="10"></td>
+<br/>
+<td width="300" valign="top"><span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"> <b> Queue Status </b> </span> 
+<!--<analytics:reportChart reportId="00O55000000Jb85" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+ <analytics:reportChart reportId="00O55000000JbD5" size="tiny"></analytics:reportChart></td>
+<td width="300" valign="top">
+<span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;">
+ <b> Aging cases </b> </span>
+ <!--<analytics:reportChart reportId="00O55000000Jb8e" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+ <analytics:reportChart reportId="00O55000000JbDK" size="tiny"></analytics:reportChart></td>
+ 
+<td width="300" valign="top"> 
+<span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;">
+ <b> Weekly Trending of Cases </b> </span> 
+ <!--<analytics:reportChart reportId="00O55000000Jb8j" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+  <analytics:reportChart reportId="00O55000000JbDF" size="tiny"></analytics:reportChart></td>
+<!--00O55000000JatK
+01Z550000004PXf-->
+</tr>
+
+<tr>
+<td width="10"></td>
+<br/>
+<td width="300" valign="top"><span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"> <b> Queue Status </b> </span> 
+<!--<analytics:reportChart reportId="00O55000000Jb85" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+ <analytics:reportChart reportId="00O55000000JbD5" size="tiny"></analytics:reportChart></td>
+<td width="300" valign="top">
+<span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;">
+ <b> Aging cases </b> </span>
+ <!--<analytics:reportChart reportId="00O55000000Jb8e" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+ <analytics:reportChart reportId="00O55000000JbDK" size="tiny"></analytics:reportChart></td>
+ 
+<td width="300" valign="top"> 
+<span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;">
+ <b> Weekly Trending of Cases </b> </span> 
+ <!--<analytics:reportChart reportId="00O55000000Jb8j" size="tiny" showRefreshButton="false"></analytics:reportChart>-->
+  <analytics:reportChart reportId="00O55000000JbDF" size="tiny"></analytics:reportChart></td>
+<!--00O55000000JatK
+01Z550000004PXf-->
+</tr>
+
+
+
+</table>
+
+</div>
+                           
+</div>      
+ 
+          
+                       
+               
+</html>  
+</apex:form>  
+</apex:page>

@@ -1,0 +1,27 @@
+<apex:page standardController="case" cache="True"> 
+<apex:outputfield value="{!case.generateTasks__c}" rendered="false"/>
+<apex:form >
+<body onload="display();">  
+<apex:pageBlock id="re"> 
+<apex:commandButton action="{!save}" onclick="refreshConsole()" value="Generate Tasks" rerender="re">
+<apex:param assignTo="{!case.generateTasks__c}" value="YES" name="generate"/>
+</apex:commandButton>  
+ </apex:pageblock>
+ </body>
+<script language="JavaScript1.2" src="/js/functions.js"></script>
+<script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script>
+<script id="clientEventHandlersJS" language="javascript">
+  var previousOnload = window.onload; window.onload = function() { if (previousOnload) { display(); } alert('loading...'); }
+    function refreshConsole()
+    {
+         window.top.location='/console';
+    }
+    function display()
+    {
+
+     var qr = sforce.connection.query("select count() From CaseArticle where CaseId=:{!case.Id}"); 
+     alert(qr);
+    } 
+   </script>  
+</apex:form>
+</apex:page>

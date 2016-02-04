@@ -1,0 +1,12 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockSection >
+<apex:commandButton onclick="window.open('/apex/PreviewPage2?id={!Id}')" value="Preview Fax"/> <br/>
+</apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+<apex:form style="overflow:auto;width:550px; height:175px">
+<apex:iframe src="/apex/PreviewPage2?id={!Id}" scrolling="true" id="Iframe2" width="80%" />
+</apex:form>
+</apex:page>

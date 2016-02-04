@@ -1,0 +1,37 @@
+<apex:page >
+<apex:form >
+  <!-- Login page for the Broker Portal -->
+ <apex:image id="theImage" value="{!$Resource.Healthcare_Header}" />
+ <body style="background-image:url('{!$Resource.Background}');">
+
+<table style="width:100%">
+  <tr>
+    <td style="width:34%"><apex:commandButton action="{!save}" value="About Us" id="About" styleClass="buttonStyle" style="background:LightBlue;width:200px;"/></td>
+    <td style="width:33%"><apex:commandButton action="{!save}" value="Consult a Doctor" id="C_Doctor" styleClass="buttonStyle" style="background:LightBlue;width:200px;"/></td>
+    <td style="width:33%"><apex:commandButton action="{!save}" value="Brokers" id="Brokers" styleClass="buttonStyle" style="background:LightBlue;width:200px;"/></td>
+   </tr>
+ <tr>
+    <td style="width:34%">
+        •   Avoid the need for paper based tasks and improve the turnaround time for plan based interactions and other activities such as onboarding and training <br/>
+        •   Provide an ability to view and learn more on the product offerings, pricing, invoices and commission related information <br/>
+        •   Enable support of the broker based sales and service channel which includes onboarding of new members, update product information <br/>
+    
+    </td>
+    <td style="width:33%"><apex:image id="Consult" value="{!$Resource.HealthcareLogo}" /></td> 
+    <td style="width:33%">
+        <form name="login">
+            Username <input type="text" name="userid" style="width: 180px;"/> <br/>
+            Password <input type="password" name="pswrd" style="width: 180px;"/> <br/>
+            <apex:outputLink value="{!$Page.CommunitiesLogin}">Login</apex:outputLink><br/>
+        </form>
+        
+        <apex:outputLink value="{!$Page.CommunitiesSelfReg}">New user</apex:outputLink><br/>
+        <apex:outputLink value="{!$Page.CommunitiesSelfRegConfirm}">Forgot your password</apex:outputLink><br/>
+    </td>
+  </tr>
+</table>
+   
+<apex:includeScript value="{!$Resource.DateGen}"/>
+</body>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,30 @@
+<!--<apex:page >
+ <chatter:feed entityId="{!$User.Id}"/>
+</apex:page>-->
+<apex:page sidebar="false" showHeader="false">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<script>
+
+    function showChatter();{
+
+        var cmp = document.getelementbyId(chatter1);
+        cmp.rendered = true;
+
+    }
+
+</script>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+ <body style="background: rgb(33,156,215);"> 
+ 
+   
+               
+    
+        <chatter:feedWithFollowers entityId="{!$User.Id}"/>
+          
+</body>           
+</html>  
+
+</apex:page>

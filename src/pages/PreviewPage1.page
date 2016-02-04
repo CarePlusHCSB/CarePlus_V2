@@ -1,0 +1,19 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<div class="slds-tabs__content slds-hide slds-text-body--small" >
+<apex:form > 
+ 
+<apex:pageBlock >
+ <apex:pageBlockSection columns="1">
+<apex:inputField value="{!acc.Auth_Category__c}"/>
+ <apex:inputField value="{!acc.Auth_Type__c}"/>
+ <apex:inputField value="{!acc.Service_From_Date__c}"/>
+ <apex:inputField value="{!acc.Primary_Diag_Code__c}"/>
+ <apex:inputField value="{!acc.CPT_Code__c}"/>
+ <apex:inputField value="{!acc.Total_Units__c}"/>
+ </apex:pageBlockSection>
+  <apex:commandButton action="{!SaveValues}" value="Save Key Metadata" />
+ </apex:pageBlock>
+ </apex:form>
+ </div>
+ </apex:page>

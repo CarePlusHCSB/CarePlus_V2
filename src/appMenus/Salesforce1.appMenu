@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AppMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <appMenuItems>
+        <name>MyDay</name>
+        <type>StandardAppMenuItem</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CarePlusHome</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>MyMembers</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>RoleHierarchy</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Tasks</name>
+        <type>StandardAppMenuItem</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Events</name>
+        <type>StandardAppMenuItem</type>
+    </appMenuItems>
+</AppMenu>

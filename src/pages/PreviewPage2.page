@@ -1,0 +1,10 @@
+<apex:page showHeader="false" standardController="Case" tabStyle="Account">
+ <apex:form > 
+ <apex:pageBlock >
+ <!--<apex:commandButton action="{!loadTif}" value="Preview Fax"/> <br/>-->
+<!--<apex:image url="https://c.cs41.content.force.com/servlet/servlet.FileDownload?file=01555000000fUkl" rendered="{!showTif}"/>-->
+<!--<apex:image url="https://c.cs41.content.force.com/servlet/servlet.FileDownload?file=01555000000fUkl" /> -->
+<apex:image url="{!$Resource.FaxImage2}" width="500" height="600"/>
+ </apex:pageBlock> 
+ </apex:form>
+ </apex:page>

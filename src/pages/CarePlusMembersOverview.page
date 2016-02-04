@@ -1,0 +1,13 @@
+<apex:page controller="CarePlusMembersOverviewctrl">
+  
+  <html>
+    
+   Age &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      :&nbsp;&nbsp;{!acctLst.Age__c}<br/>
+   DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      :&nbsp;&nbsp;{!acctLst.DOB__c}<br/>
+   Physician&nbsp; :&nbsp;&nbsp;{!acctLst.Physician__c}<br/>
+   Sex &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      :&nbsp;&nbsp;{!acctLst.Gender__c}<br/>
+    
+  </html>  
+      
+  
+</apex:page>

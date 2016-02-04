@@ -1,0 +1,207 @@
+<apex:page sidebar="false" showHeader="false" controller="careManagerCtrl">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<apex:includeScript value="{!URLFOR($Resource.jqwidget,'/scripts/jquery-1.11.1.min.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+<script type="text/javascript">
+j$ = jQuery.noConflict();
+
+j$(document).ready(function(){
+    
+     var cu='{!currentusername}';
+     var maincontent = cu.substring(0, 4);
+    // alert('value is' + cu);
+     
+       j$('.tree li a:contains('+maincontent+')').css('background', '#87CEEB');
+
+
+  });
+  
+  
+  
+</script>
+
+<style>
+.headerTitleCMT{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleCMT1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+    padding-top: 20px;position: relative;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+
+.tree li a{
+
+    border: 1px solid #ccc;
+    padding: 1px 1px;
+    text-decoration: none;
+    color: #483D8B;
+    font-family: arial, Courier New;
+    font-size:10px;
+    display: inline-block;
+      
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+    border-color:  #94a0b4;
+}
+
+</style>
+<div class="slds">
+<div class="slds-card">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+ 
+                <div class="slds-card__header slds-grid">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                 <span class="headerTitleCMT">
+                  <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" >
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#environment_hub"></use>
+                        </svg></span>
+                              
+                  </div> </span>   
+                  
+                  <span class="headerTitleCMT1">
+                  <div class="slds-media__body">
+                    <span class="slds-truncate">Care Hierarchy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  </div>
+                  </span>
+                 
+ 
+        
+             </div>
+                </div> 
+                
+      
+           <div class="slds-card__header slds-grid">
+                     <div class="slds-media slds-media--center slds-has-flexi-truncate">
+            <div class="tree">  
+    <ul>
+        <li>
+           <a href="#">{!cmmangerlist[0]}</a>
+
+                  <ul id="list">
+              
+                
+                <apex:repeat value="{!supervisorToAssociate}" var="sToAkey">
+                   <li>
+                   <a href="#"> {!sToAkey}</a>
+                   <ul>
+                    <apex:repeat value="{!supervisorToAssociate[sToAkey]}" var="sToAvalues">
+                    <li><a href="#">{!sToAvalues}</a></li>
+                    </apex:repeat>
+                   </ul>
+                   </li>
+                 </apex:repeat>  
+                
+                
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</div> <div style="height:64.5px;"/>
+</div>
+</div>
+
+</html>
+</apex:page>

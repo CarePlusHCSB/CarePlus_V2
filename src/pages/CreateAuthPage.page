@@ -1,0 +1,82 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account">
+
+<style type="html/css">
+html, body{width: 100%; height: 200%; padding: 10%; overflow:auto; margin: 10}
+div{position: fixed; border: 1px solid #000;margin: 0}
+#nw{top: 0; left: 0; right: 50%; bottom: 50%}
+#ne{top: 0; left: 50%; right: 0; bottom: 50%}
+#sw{top: 50%; left: 0; right: 50%; bottom: 0}
+#se{top: 50%; left: 50%; right: 0; bottom: 0}
+</style>
+
+<script language="javascript" type="text/javascript">
+
+function popitup(url) {
+    newwindow=window.open(url,'name','height=200,width=150');
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
+
+
+</script>
+
+<apex:form >
+<div id="nw">
+<apex:pageBlock >
+ <apex:pageBlockSection columns="1">
+<apex:inputField value="{!acc.Auth_Category__c}"/>
+ <apex:inputField value="{!acc.Auth_Type__c}"/>
+ <apex:inputField value="{!acc.Service_From_Date__c}"/>
+ <apex:inputField value="{!acc.Primary_Diag_Code__c}"/>
+ <apex:inputField value="{!acc.CPT_Code__c}"/>
+ <apex:inputField value="{!acc.Total_Units__c}"/>
+  <apex:commandButton action="{!SaveValues}" value="Save"  />
+ </apex:pageBlockSection>
+ 
+ </apex:pageBlock>
+ 
+</div>
+<div id="ne" >
+<apex:pageBlock >
+<apex:pageblockSection >
+<apex:commandButton onclick="window.open('/apex/PreviewPage2?id={!Id}')" value="Preview Fax"/> <br/>
+
+<!--<apex:image url="https://c.cs41.content.force.com/servlet/servlet.FileDownload?file=01555000000fUkl" rendered="{!showTif}" />-->
+</apex:pageblockSection>
+</apex:pageBlock>
+</div>
+</apex:form>
+<div id="sw">
+<apex:form >
+<h1>Price Author</h1>
+<apex:pageBlock >
+<apex:pageBlockTable value="{!pa}" var="p" id="pbTable1" rendered="true">
+<apex:column value="{!p.name}"/>
+<apex:column value="{!p.Prior_Auth__c}"/>
+<apex:column value="{!p.Prior_Auth__c}"/>
+<apex:column value="{!p.Date_of_Approval__c}"/>
+<apex:column value="{!p.Decision__c}"/>
+<apex:column value="{!p.Prior_Auth_Desc__c}"/>
+<apex:column value="{!p.Prior_Auth_Ref__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</div>
+<div id="se">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockTable value="{!claim}" var="c" id="pbTable2" rendered="true">
+<apex:column value="{!c.name}"/>
+<apex:column value="{!c.Claims__c}"/>
+<apex:column value="{!c.ClaimNumber__c}"/>
+<apex:column value="{!c.Claim_Description__c}"/>
+<apex:column value="{!c.Claim_Name__c}"/>
+<apex:column value="{!c.Cost_of_Claim__c}"/>
+<apex:column value="{!c.Services_Provided__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</div>
+
+
+</apex:page>

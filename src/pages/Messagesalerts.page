@@ -1,0 +1,6 @@
+<apex:page sidebar="false" showHeader="false" >
+<div style="overflow: auto;">
+<iframe scrolling="No" src="https://www.google.co.in/" style="margin-right: 50px; height:970px; margin-top: -80px; margin-bottom:-80px; width: 1050px;">
+</iframe>
+</div>
+</apex:page>

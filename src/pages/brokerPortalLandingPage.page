@@ -1,0 +1,190 @@
+<apex:page sidebar="false" showHeader="false" >
+
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jqwidget,'/scripts/jquery-1.11.1.min.js')}"/>
+
+<style>
+
+    .pageColor{
+    
+   // background-color: rgb(33,156,215);
+    
+    }
+    
+        
+</style>
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<body class="pageColor">
+<div class="slds" >
+
+<table width="100%" height="25%">
+
+  <tr>
+
+    <td width="25%"><img src="http://s3.amazonaws.com/s3.consumersadvocate.org/mongo/companies/logos/530d/6ae6/7765/6239/7306/0000/original/Aetna.jpg" style="height:200px;width:200px;"/>
+    </td>
+
+    <td width="75%"><!--<H1 style="font-size:25px;color:#00008B;"><b>Welcome to Care Plus - Broker Portal</b></H1>-->
+    <img src="https://www.griffincapital.com/assets/images/EA%20Property%20Profile%20Images/Columbia/Combined/Aetna_730x420.jpg" style="height:200px;width:900px;"/>
+     </td>
+  </tr>
+
+</table>
+<br/>
+<table width="100%" height="75%">
+
+  <tr>
+
+    <td width="25%" valign="top">
+
+   
+     
+        <div class="slds-dropdown slds-dropdown--left" style="background-color: #F0E68C;border-color: #F0E68C;">
+        <ul class="slds-dropdown__list" role="menu" >
+        <!--<ul class="slds-list--vertical slds-has-block-links--space slds-has-dividers--bottom" role="menu" >-->
+        
+        <li title="Member Information" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab1" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle  slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom16"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000;">Member Information</span>
+        </a>
+        </li>
+       
+        <li title="Claims" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab2" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle  slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#quotes"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000">Claims</span>
+        </a>
+        </li>
+       
+        <li title="View Cases" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab3" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle  slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom21"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000">View Cases</span>
+        </a>
+        </li>
+       
+        <li title="Sleep Data" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab4" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle  slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_case"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000">Sleep Data</span>
+        </a>
+        </li>
+       
+        <li title="Moves Data" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab5" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_event"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000">Moves Data</span>
+        </a>
+        </li>
+        
+        <li title="Reports" class="slds-dropdown__item">
+        <a href="#" role="tab" id="Tab6" tabindex="-1" aria-selected="false" onclick="selectTab(this);" style="text-decoration:None;">
+        <span style="background-color:#81BEF7;" class="slds-icon__container slds-icon__container--circle slds-m-right--medium">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small" >
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#report"></use>
+        </svg>
+        </span>
+        <span class="slds-truncate" style="color: #000">Reports</span>
+        </a>
+        </li>
+        
+        </ul>
+        </div>       
+      
+   
+        
+    </td>
+
+    <td width="75%" valign="top">
+    
+   <div id="showMe"> 
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab1">
+      
+      <apex:iframe src="https://c.cs41.visual.force.com/apex/CarePlus_ViewMemberInfo_Dreamweaver?id=00155000005oKId" width="300px;" height="360px;"/>
+   </div>
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab2">
+       Content for Claims
+   </div> 
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab3">
+       Content for View Cases
+       
+   </div>
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab4">
+       Content for Sleep Data
+       
+   </div>
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab5">
+       Content for Moves Data
+   </div>
+   
+   <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab6">
+       Content for Reports
+   </div>
+   
+   
+   </div>
+
+    </td>
+
+  </tr>
+
+</table>
+
+</div>
+</body>
+<script>
+    function selectTab(elmnt) {
+        // slds-active
+        $(elmnt).parent("li").siblings(".slds-active").removeClass("slds-active");
+        $(elmnt).parent("li").addClass("slds-active");
+        
+        // tabindex
+        $(elmnt).parent("li").siblings().children("a").attr("tabindex", -1);
+        $(elmnt).attr("tabindex", 0);
+        
+        // aria-selected
+        $(elmnt).parent("li").siblings().children("a").attr("aria-selected", false);
+        $(elmnt).attr("aria-selected", true);
+        
+        // hiding previouly selected tab (slds-show/slds-hide)
+        $("#showMe").children("div[role='tabpanel'].slds-show").addClass("slds-hide");
+        $("#showMe").children("div[role='tabpanel'].slds-show").removeClass("slds-show");
+        // displaying newly selected tab (slds-show/slds-hide)
+        $("#showMe").children("div[aria-labelledby='"+elmnt.id+"']").addClass("slds-show");
+        $("#showMe").children("div[aria-labelledby='"+elmnt.id+"']").removeClass("slds-hide");
+    }
+    
+</script>
+
+
+</html>
+
+
+</apex:page>

@@ -1,0 +1,38 @@
+<apex:page id="thePage" standardController="Account" sidebar="false" showHeader="false">
+<style>
+.myTabPanelLayout {
+    height: 398px;      
+    <!--display: block;
+    overflow-x: hidden;-->
+    overflow-y: auto;       
+    padding: 10px 0px 10px 0px;
+    #padding: 10px 15px 10px 15px;
+    margin-bottom: 15px;
+}
+</style>
+
+    <apex:tabPanel switchType="client" id="theTabPanel" styleClass="myTabPanelLayout ">
+    
+        <apex:tab label="Detail" name="name1" id="tabOne">
+            <apex:detail subject="{!account.Id}" relatedList="true" title="false"/> 
+        </apex:tab>
+        
+        <apex:tab label="Medical Records" name="name2" id="tabTwo">
+            <apex:relatedList list="Medical_Records__r" />
+        </apex:tab>
+        
+        <apex:tab label="Lab Records" name="name3" id="tabThree">
+            <apex:relatedList list="Lab_Records__r" />
+        </apex:tab>
+        
+        <apex:tab label="Pharmacy Records" name="name4" id="tabFour">
+            <apex:relatedList list="Pharmacy_Records__r" />
+        </apex:tab>
+        
+       <apex:tab label="Claims" name="name5" id="tabFive">
+            <!--<apex:relatedList list="Claim__r" /> -->
+        </apex:tab> 
+
+
+    </apex:tabPanel>
+</apex:page>

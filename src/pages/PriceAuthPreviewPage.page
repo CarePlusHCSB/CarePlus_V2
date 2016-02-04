@@ -1,0 +1,8 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account" >
+    <apex:form >
+        <apex:iframe src="/apex/PreviewPage1?id={!Id}" scrolling="true" id="Iframe1" width="50%" height="25%"/>
+        <apex:iframe src="/apex/PreviewPage3?id={!Id}" scrolling="true" id="Iframe3" width="50%" height="25%"/>
+         <apex:iframe src="/apex/PreviewPage5?id={!Id}" scrolling="true" id="Iframe2" width="50%" height="25%"/>
+         <apex:iframe src="/apex/PreviewPage4?id={!Id}" scrolling="true" id="Iframe4" width="50%" height="25%"/>
+    </apex:form>
+</apex:page>

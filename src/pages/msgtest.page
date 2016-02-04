@@ -1,0 +1,3 @@
+<apex:page >
+<topics:widget entity="02V550000000I0M" customUrl="/02V550000000I0M"/>
+</apex:page>

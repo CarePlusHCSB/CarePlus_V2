@@ -1,0 +1,5 @@
+<apex:page controller="CaseArticleController">
+<!--  //  <apex:repeat value="{!caseArticle}" var="c"> -->
+        <apex:outputText value="{!caseArticle}"/>
+    <!--</apex:repeat> -->
+</apex:page>

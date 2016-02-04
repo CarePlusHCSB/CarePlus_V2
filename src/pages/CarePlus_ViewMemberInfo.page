@@ -1,0 +1,151 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" extensions="ViewMemberCtrl" action="{!getAcctLst}">
+<style>
+/*
+table, th,td, H1 {
+    border: 0px solid black;
+    background-color:#73D6EA;
+    border-spacing: 2px;
+    <!--padding: 6px 6px 6px 6px;-->
+    border-collapse: separate;
+}
+*/
+.headerTitle4{
+//font-family: arial, sans-serif;
+font-size: 14px;
+//font-style: bold; 
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+//margin:0.2em;
+//width: 400px;
+}
+
+</style>
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!--<apex:includeScript value="{!URLFOR($Resource.svg4everybody)}"/>-->
+<script type="javascript" src="/resource/1449216126000/svg4everybody/svg4everybody.min.js"/>
+<script>
+svg4everybody(); 
+</script>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<body style="background-color: rgb(161,221,243)">
+
+<!--<H1> View Member Information </H1>-->
+<br></br>
+<table border="0" width="100%" height="100%">
+<tr>
+ <td width="25%" height="33%" valign="top" style="padding:10px;">    
+               
+               <div class="slds"> 
+               <div style="display:block;margin-left: auto;margin-right: auto;">
+                    
+                       <apex:outputText value="{!acctLst[0].profilePic__c}" escape="false" />
+               
+              <br/>  <br/>  
+
+           <span style="font-size: 15px;color: rgb(33,156,215)"><b>{!acctLst[0].Name}</b>&nbsp;</span>
+                           <span class="slds-icon__container slds-icon-standard-log-a-call"><a target="_blank" href="https://c.cs41.visual.force.com//00T/e?title=Call&what_id={!acctLst[0].Id}&followup=1&tsk5=Call&retURL=%2F00155000009xOF8">
+                         <button id="clickMe" class="slds-button slds-button--icon-bare">
+                          <svg aria-hidden="true" class="slds-icon">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#call"></use>
+                          </svg>
+                          </button></a>
+                      <!--<span class="slds-assistive-text">Log a Call icon</span>-->
+                        </span>
+                        &nbsp;
+                          <span class="slds-icon__container slds-icon-standard-email"><a target="_blank" href="https://cs41.salesforce.com/_ui/core/email/author/EmailAuthor?p3_lkid={!acctLst[0].Id}&retURL=%2F00155000009xOF8">
+                         <button id="clickMe" class="slds-button slds-button--icon-bare">
+                          <svg aria-hidden="true" class="slds-icon">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#email"></use>
+                          </svg>
+                          </button></a>
+                      <!--<span class="slds-assistive-text">Send an Email icon</span>-->
+                        </span>
+                        &nbsp;
+                        
+                        <span class="slds-icon__container slds-icon-standard-contact"><a>
+                        <button id="clickMe" class="slds-button slds-button--icon-bare">
+                          <svg aria-hidden="true" class="slds-icon">
+                            <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#more"></use>
+                          </svg></button></a>
+                          <span class="slds-assistive-text">Case icon </span>
+                        </span>
+
+                
+                <!-- to check SVG Icons-->       
+                                              
+                       <br/><br/>
+                  
+                  <apex:include pageName="ViewDiseasePills" />
+                  <!--<iframe id="gridFrame1" height="80" width="100%" frameborder="0"
+                  src="/apex/ViewDiseasePills?id=00155000005oKId"/>-->
+                 </div> </div>
+                  
+</td>
+                 
+
+
+<td valign="top" >
+
+<table valign="top" style="border-collapse:collapse; table-layout:fixed; width:1000px;">
+<tr>
+<td valign="top" style="width: auto;">
+<apex:include pageName="MemberOverview" />
+</td>
+<td valign="top" style="width: auto;">
+<apex:include pageName="Contactdetails" />
+</td>
+<td valign="top"  style="width: auto;">
+<apex:include pageName="CareManager_Tree"/>
+<!--<iframe id="gridFrame1" scrolling="auto" frameborder="0" src="/apex/CareManagerJquery_Tree"/>-->
+</td>
+</tr>
+</table>
+
+</td>
+
+</tr>
+
+<tr>
+<td  valign="top" align="center" style="padding:10px;">
+            <div class="slds">
+                <span class="headerTitle4">
+            <span class="slds-icon__container slds-icon-standard-account">
+                         <svg aria-hidden="true" class="slds-icon">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#goals"></use>
+                          </svg></span>
+
+            
+                  Care Plan</span></div>
+             
+
+            <apex:include pageName="CarePlanDetails1" />
+
+
+<!--<iframe id="gridFrame1" scrolling="auto" height="480" width="100%" frameborder="0"
+                  src="/apex/CarePlanDetails1"/> -->
+
+
+</td>
+
+<td width="100%" valign="top" align="center" style="padding:10px;">
+<apex:include pageName="MembersDetails_tabs"/>
+<!--<apex:include pageName="MembersDetails_sridhar"/>-->
+
+<!--<apex:include pageName="066550000000Mjy"/>-->
+
+ </td>
+</tr>
+
+</table>
+</body>
+</meta>
+</html>
+
+</apex:page>

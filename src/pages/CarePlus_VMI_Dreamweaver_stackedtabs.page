@@ -1,0 +1,121 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" extensions="ViewMemberCtrl" action="{!getAcctLst}">
+
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+.headerTitleCPDW{
+font-size: 14px;
+color: #fff!important;
+text-align: left;
+background: rgb(33,156,215);
+display: block;
+padding: 8px;
+margin-top:1px;
+}
+</style>
+
+<script type="text/javascript">
+function addPill(){
+     
+     window.location = '\addDiseasePills?id='+'{!$CurrentPage.Parameters.id}';
+ 
+ }   
+  
+</script>
+</head>
+
+<body style="background-color: rgb(161,221,243);">
+<table width="1420" height="300" style="table-layout: fixed;">
+  <tr>
+    <td width="340">
+        <div class="slds">
+            <apex:outputText value="{!acctLst[0].profilePic__c}" escape="false" rendered="{!isProfilePic}" />
+            <br/><br/> 
+            <span style="font-size: 15px;color: #3399cc;"><b>{!acctLst[0].Name}</b>&nbsp;</span>
+            <span class="slds-icon__container slds-icon-standard-log-a-call" style="background: rgb(33,156,215)">
+                           <a target="_blank" href="https://c.cs41.visual.force.com//00T/e?title=Call&what_id={!acctLst[0].Id}&followup=1&tsk5=Call&retURL=%2F00155000009xOF8">
+                           <button id="clickMe" class="slds-button slds-button--icon-bare">
+                           <svg aria-hidden="true" class="slds-icon">
+                           <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#call"></use>
+                           </svg>
+                           </button>
+                           </a>
+            </span>
+            &nbsp;
+            <span class="slds-icon__container slds-icon-standard-email">
+                         <a target="_blank" href="https://cs41.salesforce.com/_ui/core/email/author/EmailAuthor?p3_lkid={!acctLst[0].Id}&retURL=%2F00155000009xOF8">
+                         <button id="clickMe" class="slds-button slds-button--icon-bare">
+                         <svg aria-hidden="true" class="slds-icon">
+                         <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#email"></use>
+                         </svg>
+                         </button></a>
+            </span>
+            &nbsp;
+            <span class="slds-icon__container slds-icon-standard-contact">
+                        <a>
+                        <button id="clickMe" class="slds-button slds-button--icon-bare">
+                        <svg aria-hidden="true" class="slds-icon">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#more"></use>
+                        </svg></button></a>
+                        <span class="slds-assistive-text">Case icon </span>
+            </span>
+            &nbsp;
+            <a class="slds-pill" style="background: rgb(33,156,215)">
+            <button id="clickMeToAdd" onclick="addPill()" class="slds-button slds-button--icon-bare slds-pill__remove" style="color: #fff">   
+            <svg aria-hidden="true" class="slds-button__icon" >
+            <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+            </svg>
+            </button>
+            </a>
+            <br/><br/>
+            
+            <apex:include pageName="ViewDiseasePills" />
+                                    
+        </div>    
+    </td>
+    <td width="359">
+            <apex:include pageName="MemberOverview_dreamweaver" />
+    </td>
+    <td width="359">
+            <apex:include pageName="Contactdetails_dreamweaver" />
+    </td>
+    <td width="359">
+            <apex:include pageName="CareManager_Tree_dreamweaver"/>
+    </td>
+  </tr>
+</table>
+
+<table width="1420" height="900" style="table-layout: fixed;">
+  <tr>
+    <td width="340" valign="top">
+    
+  <div class="slds">
+            <span class="headerTitleCPDW">
+            <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#goals"></use>
+                        </svg></span>
+            Care Plan
+            </span>
+        </div>
+       <apex:include pageName="CarePlanDetails1_dreamweaver"/>
+     <!--  <apex:include pageName="CarePlanDetails21_dreamweaver"/>-->
+    
+    </td>
+    <td width="1080" valign="top">
+    
+        <apex:include pageName="MembersDetails_STtabs_dreamweaver"/>   
+    
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+</apex:page>

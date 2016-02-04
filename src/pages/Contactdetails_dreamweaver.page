@@ -1,0 +1,233 @@
+<apex:page sidebar="false" showHeader="false" controller="ViewMemberCtrl" action="{!getContactBillingDetails}">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<style>
+.headerTitleC{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleC1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+                     <!----------Lightning Design system ---------->
+<div class="slds">
+            <div class="slds-card" style="background-color: rgb(33,156,215);">
+                <div class="slds-card__header slds-grid" style="background-color: rgb(33,156,215);">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                 <span class="headerTitleC">
+                  <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" style="height:32px;width:30px;" preserveAspectRatio="xMidYMid meet">
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#map"></use>
+                        </svg></span>
+                              
+                  </div> </span>   
+                  
+                  <span class="headerTitleC1">
+                  <div class="slds-media__body" style="background-color: rgb(33,156,215);">
+                    <span class="slds-truncate"><b>Contact Details</b>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                  </div>
+                  </span>
+                 </div>
+                </div> 
+                
+         <apex:outputPanel id="thePanel1" layout="block" rendered="{!(isContactBillingAddr)}">   
+                
+         <div class="slds-card__body" style="background-color: rgb(33,156,215); height:250px">
+           
+           <div class="slds-tile__detail" style="background-color: rgb(33,156,215);">
+           <table>
+                   <tr>
+                   <td width="5%"></td>
+               <td>
+              <dl class="dl--horizontal slds-text-body--small">
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing Street:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingStreet}
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing City:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingCity}
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing State:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingState}
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                 Phone:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].Phone}
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Email:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].Email}
+                </dd>
+                </div>
+                
+               <!--
+               <div style="height:36px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing Country:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingCountry}
+                </dd>
+                </div> -->
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                    Mailing Postal Code:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingPostalCode}
+                </dd>
+                </div>
+                <div style="height:36px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                </dd>
+                </div>
+                <!--<div style="height:38px;display:block;"/>-->
+             </dl>
+             </td>
+             </tr>
+             </table>
+
+            </div>
+            
+          </div>  
+          
+          </apex:outputPanel>   
+          
+          
+          <apex:outputPanel id="thePanel" layout="block" rendered="{!Not(isContactBillingAddr)}">   
+               
+         <div class="slds-card__body" style="background-color: rgb(33,156,215); height:250px">
+           
+           <div class="slds-tile__detail" style="background-color: rgb(33,156,215);">
+           <table>
+                   <tr>
+                   <td width="5%"></td>
+               <td>
+             <dl class="dl--horizontal slds-text-body--small">
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing Street:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                 
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing City:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing State:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                 
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                 Phone:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                 
+                </dd>
+                </div>
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Email:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                 
+                </dd>
+                </div>
+                
+               <!--
+               <div style="height:36px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                  Mailing Country:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                  {!cntLst[0].MailingCountry}
+                </dd>
+                </div> -->
+                <div style="height:25px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                    Mailing Postal Code:
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                 
+                </dd>
+                </div>
+                
+                <div style="height:36px;display:block;">
+                <dt class="slds-dl--horizontal__label" style="color: #fff">
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta" style="color: #fff">
+                </dd>
+                
+                </div>
+                <!--<div style="height:38px;display:block;"/>-->
+             </dl>
+             </td>
+             </tr>
+             </table>
+
+            </div>
+            
+          </div>  
+        
+          </apex:outputPanel>   
+     
+     
+     </div>             
+     </div>      
+        
+</html>
+</apex:page>

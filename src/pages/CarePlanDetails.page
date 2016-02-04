@@ -1,0 +1,67 @@
+<apex:page controller="GoalCtrl" action="{!getMemberGoal}"  sidebar="false" showHeader="false">
+<style>
+ .container
+    {
+      overflow:auto; 
+      height:100px;   
+    }
+
+ .headerRow.headerStyle
+    {
+        <!--color: #CC0000 !important;-->
+        position:relative;
+        TOP: expression(this.offsetParent.scrollTop-1);        
+    }
+ .rules_form1
+   {
+      background-color:#73D6EA;
+   }
+   
+   
+</style>
+ 
+<apex:form styleClass="rules_form1">
+    <apex:outputPanel id="thePanel">
+    <apex:pageBlock >
+        
+        <apex:pageBlockButtons location="top" >
+               <!-- <input type="Button" Name="goalButton" value="Set a Goal" onclick="window.location.href='/a0M/e?retURL=%2Fa0M%2Fo'"/> -->
+                <apex:commandButton value="Set a Goal" action="{!createGoal}"/>
+            </apex:pageBlockButtons>
+            
+        <center><apex:outputLabel ><H1>Goals</H1> </apex:outputLabel></center>
+        <apex:pageBlockTable value="{!goalLst}" var="g" styleClass="container">
+        <!--<apex:column HeaderClass="GoalLink">
+        <a href="/{!g.Id}">Goal</a>
+        </apex:column>-->
+        
+          <!--<apex:column value="{!g.Outcome__c}" headerClass="headerStyle"/> -->
+          <apex:column headerValue="Care Plan"> <a href="/{!g.Id}" style="text-decoration: none;"> {!g.Goal_Name__c}</a>
+          </apex:column>         
+          <apex:column value="{!g.Intervention__c}"/>
+
+
+
+        </apex:pageBlockTable> 
+
+        </apex:pageBlock> 
+        </apex:outputPanel>
+        
+         <apex:pageBlock >
+         <center><apex:outputLabel ><H1>Past Goals</H1> </apex:outputLabel></center>
+         <apex:pageBlockTable value="{!goalCloseLst}" var="gc" styleClass="container">
+        <!--<apex:column HeaderClass="GoalLink">
+        <a href="/{!gc.Id}">Goal</a>
+        </apex:column>-->
+        <!--<apex:column value="{!gc.Outcome__c}" />-->
+          <apex:column headerValue="Care Plan"> <a href="/{!gc.Id}" style="text-decoration: none;"> {!gc.Goal_Name__c}</a>
+          </apex:column>
+          <apex:column value="{!gc.Intervention__c}"/>
+
+
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock> 
+    </apex:form>    
+                                                         
+</apex:page>

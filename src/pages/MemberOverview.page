@@ -1,0 +1,200 @@
+<apex:page sidebar="false" showHeader="false" controller="ViewMemberCtrl" action="{!getAcctLst}">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleM{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleM1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+<!--<apex:pageBlock > 
+
+            <span class="headerTitle">
+            <div class="slds">
+            <span class="slds-icon__container slds-icon-standard-account">
+              <svg aria-hidden="true" class="slds-icon">
+            <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+          </svg>
+          <span class="slds-assistive-text">Account Icon</span>
+            </span>
+
+                Member Information</div></span>
+             <div class="slds">   
+            <apex:pageBlockSection Columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Age"/>
+                    <apex:outputText value="{!acctLst[0].Age__c}"/>
+                  
+                     
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem>
+                <apex:outputLabel value="DOB"/>
+                    <apex:outputText value="{!acctLst[0].DOB__c}"/>  
+                   
+               </apex:pageBlockSectionItem>
+
+                
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Gender"/>
+                    <apex:outputText value="{!acctLst[0].Gender__c}"/> 
+              </apex:pageBlockSectionItem>
+
+
+                <apex:pageBlockSectionItem>
+                <apex:outputLabel value="Physician"/>
+                    <apex:outputText value="{!acctLst[0].Physician__c}"/> 
+                 </apex:pageBlockSectionItem>
+
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Eligible"/>
+                    <apex:outputText value="{!acctLst[0].Eligible__c}"/>                 
+             </apex:pageBlockSectionItem>
+
+                
+                <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Start Date"/>
+                    <apex:outputText value="{!acctLst[0].Start_Date__c}"/> 
+                </apex:pageBlockSectionItem>
+
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="End Date"/>
+                    <apex:outputText value="{!acctLst[0].End_Date__c}"/>
+                 </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Health Plan" />
+                    <apex:outputText value="{!acctLst[0].Helath_Plan__c}"/>
+                
+                 </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Health Plan ID "/>
+                    <apex:outputText value="{!acctLst[0].Helath_Plan_Id__c}"/>
+                </apex:pageBlockSectionItem>
+
+                
+       </apex:pageBlockSection>  
+       </div>    
+            
+        </apex:pageBlock>-->
+      
+<!--new code Lightning for Member overview-->
+        <div class="slds" >
+            <div class="slds-card" >
+                <div class="slds-card__header slds-grid" >
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate" >
+                  <span class="headerTitleM">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" >
+                        <!--<use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>-->
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_contact"></use>
+                        </svg></span>
+                    </div>  </span>  <span class="headerTitleM1">
+                  <div class="slds-media__body" >
+                    <span class="slds-truncate">Member Information&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  </div></span>
+                 </div>
+                </div>
+                
+         <div class="slds-card__body" >
+           
+          
+           <div class="slds-tile__detail" >
+               <table>
+                   <tr>
+                   <td width="5%"></td>
+               <td>    
+              <dl class="dl--horizontal slds-text-body--small">
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <span class="slds-truncate">Age:</span>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <span class="slds-truncate">{!acctLst[0].Age__c}</span>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <span class="slds-truncate">DOB:</span>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<span class="slds-truncate">{!acctLst[0].DOB__c}</span>-->
+                  <span class="slds-truncate">{!strDOB}</span>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Gender:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate">{!acctLst[0].Gender__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Physician:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate">{!acctLst[0].Physician__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Eligible:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate">{!acctLst[0].Eligible__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Start Date:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<p class="slds-truncate">{!acctLst[0].Start_Date__c}</p>-->
+                  <p class="slds-truncate">{!strStartDate}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">End Date:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<p class="slds-truncate">{!acctLst[0].End_Date__c}</p>-->
+                  <p class="slds-truncate">{!strEndDate}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Health Plan:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate">{!acctLst[0].Helath_Plan__c}</p>
+                </dd></div>
+                <div style="height:24px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate">Health Plan ID:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate">{!acctLst[0].Helath_Plan_Id__c}</p>
+                </dd>
+                </div>
+             </dl>
+             </td>
+             </tr>
+             </table>
+             
+            </div>
+            
+          </div>  
+     
+     
+     </div>             
+     </div>      
+
+</html>    
+</apex:page>

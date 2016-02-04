@@ -1,0 +1,4 @@
+<apex:page standardController="Case">
+<!-- <analytics:reportChart reportId="00O55000000JQMu" size="medium" cacheResults="false" ></analytics:reportChart>-->
+<apex:image id="theImage" value="{!$Resource.PatientData}"/>
+</apex:page>

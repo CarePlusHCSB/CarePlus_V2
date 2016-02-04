@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pharmacy Records</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pharmacy Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Pharmacy Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Action By --></label>
+        <name>Action_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clinic --></label>
+        <name>Clinic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dosage --></label>
+        <name>Dosage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Action --></label>
+        <name>Last_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member ID --></label>
+        <name>Member_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacist --></label>
+        <name>Pharmacist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prescribed By --></label>
+        <name>Prescribed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refills By --></label>
+        <name>Refills_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks from Pharmacy --></label>
+        <name>Remarks_from_Pharmacy__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

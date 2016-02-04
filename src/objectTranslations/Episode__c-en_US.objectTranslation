@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Episode</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Episodes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date of Visit --></label>
+        <name>Date_of_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Episode ID --></label>
+        <name>Episode_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Episodes__c</name>
+        <relationshipLabel><!-- Episodes (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- claims --></label>
+        <name>claims__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

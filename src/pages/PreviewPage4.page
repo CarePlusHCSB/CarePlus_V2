@@ -1,0 +1,14 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account">
+ <apex:form style="overflow:auto;width:550px;height:170px">
+ <apex:pageBlock title="Claims">
+<apex:pageBlockTable value="{!claim}" var="c" id="pbTable2" rendered="true">
+<apex:column value="{!c.name}"/>
+<apex:column value="{!c.Claims__c}"/>
+<apex:column value="{!c.ClaimNumber__c}"/>
+<apex:column headerValue="Description" value="{!c.Claim_Description__c}"/>
+<apex:column value="{!c.Cost_of_Claim__c}"/>
+<apex:column value="{!c.Services_Provided__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

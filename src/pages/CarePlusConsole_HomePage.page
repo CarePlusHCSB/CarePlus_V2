@@ -1,0 +1,110 @@
+<apex:page sidebar="false" showHeader="false" standardController="Case"  extensions="HompageCtrl">
+
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+.headerTitleCPDW{
+font-size: 14px;
+color: #fff!important;
+text-align: left;
+background: rgb(33,156,215);
+display: block;
+padding: 8px;
+margin-top:1px;
+}
+</style>
+</head>
+
+<body style="background-color: rgb(161,221,243);">
+<apex:include pageName="CarePlus_Global_header"/>
+<div class="slds">
+
+<table width="1420" height="300" style="table-layout: fixed;">
+  <tr>
+    <td width="340" valign="top">
+    
+         <div style="display:block;height:200px;width:200px;">
+                    
+                       <apex:outputText value="{!currentprofilepic}" escape="false" />
+                    <!--   </div>-->
+                       <br/>
+                     
+        <span style="font-size: 20px;color: rgb(33,156,215);"><b>{!currentusername}</b></span>
+        <br/>
+        <span style="font-size: 16px;color: rgb(33,156,215);"><b>{!currentuserrole}</b></span>
+        </div>
+    
+    </td>
+    <td width="361" valign="top"><apex:include pageName="Mymembers1" />
+    </td>
+    <td width="361" valign="top">
+    <apex:include pageName="Mycases1" />
+    </td>
+    <td width="361" valign="top">
+    <apex:include pageName="CareManager_Tree_dreamweaver_homepage"/>
+    </td>
+  </tr>
+</table>
+
+<!--
+<table width="1420" style="table-layout: fixed;">
+ <tr>
+    <td width="340" valign="top">
+    </td>
+  <td width="1080" valign="top">
+  
+       <apex:iframe src="/apex/Chatter" scrolling="true" height="200"/>
+       </td>
+       </tr>
+     </table>  -->
+  
+    
+    
+<table width="1420" style="table-layout: fixed;">
+  <tr>
+    <td width="340" valign="top">
+       <div class="slds-card" style="background-color: rgb(33,156,215);">
+         <div style="padding:10px;"> 
+        <div class="slds-media__figure">
+           <svg aria-hidden="true" class="slds-icon slds-icon-standard-event slds-icon--medium">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#insights"></use>
+        </svg>
+        
+        <span class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;My Calendar </b> </span>
+        </div>
+        </div>
+        
+            <!-- <span style="color: #fff;font-family: arial, sans-serif;font-size: 14px;"> -->
+          <b> <apex:include pageName="MyCalendar"/> </b>
+           
+       </div>
+    </td>
+    <td width="1080" valign="top">
+    <apex:include pageName="Myreports"/>
+    </td>
+  </tr>
+  </table>
+  
+  <table width="1420" style="table-layout: fixed;">
+ <tr>
+    <td width="340" valign="top">
+    </td>
+  <td width="1080" valign="top">
+  
+       <apex:iframe src="/apex/Chatter" scrolling="true" height="200"/>
+       </td>
+       </tr>
+     </table> 
+  
+
+</div>
+</body>
+</html>
+
+
+</apex:page>

@@ -1,0 +1,54 @@
+<apex:page standardController="Case" showHeader="false" sidebar="false" tabStyle="account" >
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<div class="slds" >
+    
+    <apex:outputField id="CaseField2" value="{!Case.AccountId}"/>
+    
+    <style>
+        .activeTab {background-color: #236FBD; color:white;
+        background-image:none}
+        .inactiveTab { background-color: lightgrey; color:black;
+        background-image:none}
+    </style>
+    <apex:pageMessage summary="No member exists." severity="Info" strength="1" rendered="{!IF(Case.AccountId==null,true,false)}"/>
+
+    <apex:tabPanel switchType="client" selectedTab="tabdetails" rendered="{!IF(Case.AccountId==null,false,true)}"
+    id="AccountTabPanel" tabClass="activeTab"
+    inactiveTabClass="inactiveTab">
+        <apex:tab label="Details" name="AccDetails" id="tabdetails">
+            <apex:detail relatedList="false" title="true"/>
+        </apex:tab>
+        
+        <apex:tab label="Medical Records" name="Medical_Records" id="tabMR">
+            <apex:relatedList subject="{!Case.AccountId}" list="Medical_Records__r"/>
+        </apex:tab>
+        
+        <apex:tab label="Lab Records" name="Lab_Records" id="tabLR">
+            <apex:relatedList subject="{!Case.AccountId}" list="Lab_Records__r"/>
+        </apex:tab>
+        
+        <apex:tab label="Pharmacy Records" name="Pharmacy_Records__c" id="tabPR">
+            <apex:relatedList subject="{!Case.AccountId}" list="Pharmacy_Records__r"/>
+        </apex:tab>
+        
+        <apex:tab label="Prior Authorization" name="Prior_Auth__c" id="tabPA">
+            <apex:relatedList subject="{!Case.AccountId}" list="Prior_Authorizations__R"/>
+        </apex:tab>
+        
+        <apex:tab label="Claims" name="Claim__c" id="tabCl">
+            <apex:relatedList subject="{!Case.AccountId}" list="Claims__r"/>
+        </apex:tab>
+        
+        <apex:tab label="Open Activities" name="OpenActivities"
+        id="tabOpenAct">
+            <apex:relatedList subject="{!Case.AccountId}"
+            list="OpenActivities" />
+        </apex:tab>
+        <apex:tab label="Notes and Attachments"
+        name="NotesAndAttachments" id="tabNoteAtt">
+            <apex:relatedList subject="{!Case.AccountId}"
+            list="CombinedAttachments" />
+        </apex:tab>
+    </apex:tabPanel>
+</div>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page controller="OAuth2InitController" action="{!init}">
+<apex:form >
+<apex:commandButton action="{!doAuth}" value="Connect"/>
+</apex:form>
+{!response}
+</apex:page>

@@ -1,0 +1,126 @@
+<apex:page sidebar="false" showHeader="false" controller="ViewMemberCtrl" action="{!getAcctLst}">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleM{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleM1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+      
+<!--new code Lightning for Member overview-->
+        <div class="slds" >
+            <div class="slds-card" style="background-color: rgb(33,156,215);">
+                <div class="slds-card__header slds-grid" style="background-color: rgb(33,156,215);">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate" >
+                  <span class="headerTitleM">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" >
+                        <!--<use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>-->
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_contact"></use>
+                        </svg></span>
+                    </div>  </span>  <span class="headerTitleM1">
+                  <div class="slds-media__body" style="background-color: rgb(33,156,215);">
+                    <span class="slds-truncate"><b>Member Information</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  </div></span>
+                 </div>
+                </div>
+                
+         <div class="slds-card__body" style="background-color: rgb(33,156,215); height:250px;">
+           
+          
+           <div class="slds-tile__detail" style="background-color: rgb(33,156,215);">
+               <table>
+                   <tr>
+                   <td width="5%"></td>
+               <td>    
+              <dl class="dl--horizontal slds-text-body--small">
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <span class="slds-truncate" style="color: #fff">Age:</span>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <span class="slds-truncate" style="color: #fff">{!acctLst[0].Age__c}</span>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <span class="slds-truncate" style="color: #fff">DOB:</span>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<span class="slds-truncate">{!acctLst[0].DOB__c}</span>-->
+                  <span class="slds-truncate" style="color: #fff">{!strDOB}</span>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Gender:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate" style="color: #fff">{!acctLst[0].Gender__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Physician:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate" style="color: #fff">{!acctLst[0].Physician__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Eligible:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate" style="color: #fff">{!acctLst[0].Eligible__c}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Start Date:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<p class="slds-truncate">{!acctLst[0].Start_Date__c}</p>-->
+                  <p class="slds-truncate" style="color: #fff">{!strStartDate}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">End Date:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <!--<p class="slds-truncate">{!acctLst[0].End_Date__c}</p>-->
+                  <p class="slds-truncate" style="color: #fff">{!strEndDate}</p>
+                </dd></div>
+                <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Health Plan:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate" style="color: #fff">{!acctLst[0].Helath_Plan__c}</p>
+                </dd></div>
+                <div style="height:24px;"><dt class="slds-dl--horizontal__label">
+                  <p class="slds-truncate" style="color: #fff">Health Plan ID:</p>
+                </dt>
+                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                  <p class="slds-truncate" style="color: #fff">{!acctLst[0].Helath_Plan_Id__c}</p>
+                </dd>
+                </div>
+             </dl>
+             </td>
+             </tr>
+             </table>
+             
+            </div>
+            
+          </div>  
+     
+     
+     </div>             
+     </div>      
+
+</html>    
+</apex:page>

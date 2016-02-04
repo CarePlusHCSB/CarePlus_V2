@@ -1,0 +1,13 @@
+<apex:page standardController="Case" extensions="imagingQueueCase_cntrlr">
+    <apex:pageBlock title="My Queue">
+        <apex:pageBlockTable value="{!cases}" var="c">
+            <apex:column headerValue="Case Number">
+                <apex:outputLink value="/{!c.id}" target="_blank">{!c.caseNumber}</apex:outputLink>
+            </apex:column>
+            <apex:column value="{!c.subject}"/>
+            <apex:column value="{!c.RAGStatus__c}"/>
+            <apex:column value="{!c.Type_of_Case__c}" rendered="{!If($Profile.Name=='CM_UM_Nurse',True,False)}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+</apex:page>

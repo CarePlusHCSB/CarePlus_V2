@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Authorization</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Authorization</value>
+    </caseValues>
+    <fields>
+        <label><!-- Auth Code Id --></label>
+        <name>Auth_Code_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay To Affiliation Id --></label>
+        <name>Pay_To_Affiliation_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay To Affiliation Name --></label>
+        <name>Pay_To_Affiliation_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refer From Entity --></label>
+        <name>Refer_From_Entity__c</name>
+        <relationshipLabel><!-- Authorization --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Refer To Entity --></label>
+        <name>Refer_To_Entity__c</name>
+        <relationshipLabel><!-- Authorization (Refer to Entity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service From --></label>
+        <name>Service_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service To --></label>
+        <name>Service_To__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

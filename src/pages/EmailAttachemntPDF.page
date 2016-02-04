@@ -1,0 +1,15 @@
+<apex:page showHeader="false" standardController="Case" extensions="CaseDetailsCtrl" tabStyle="Account" action="{!getCaseEmailAttachment}" >
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<div class="slds-tabs__content slds-hide slds-text-body--small" >
+<apex:form > 
+ <apex:pageBlock >
+    <apex:iframe src="data:{!attachemntLst[0].ContentType};base64,{!pdf}" scrolling="true" id="theIframe" rendered="{!isEmailCase}"/>
+    
+    <apex:pageBlockSection columns="1" rendered="{!Not(isEmailCase)}">
+        <apex:outputText ><b>PDF Not Attached to Case</b></apex:outputText>            
+    </apex:pageBlockSection>
+    
+ </apex:pageBlock> 
+ </apex:form>
+</div>
+ </apex:page>

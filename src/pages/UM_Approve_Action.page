@@ -1,0 +1,34 @@
+<apex:page StandardController="Case">
+  <apex:form id="theForm" >
+      <apex:selectRadio value="{!case.IntStatus__c}" layout="pageDirection" id="theRadio" onchange="radioval();">
+          <apex:selectOption itemLabel="Approve" itemValue="Approve"></apex:selectOption>
+          <apex:selectOption itemLabel="Approve - Dont Send Fax" itemValue="Approve - Dont Send Fax"></apex:selectOption>
+          <apex:selectOption itemLabel="No Prior Auth" itemValue="No Prior Auth"></apex:selectOption>
+          <apex:selectOption itemLabel="Request Additional Info." itemValue="Request Additional Info."></apex:selectOption>
+          <apex:selectOption itemLabel="Incomplete SRF" itemValue="Incomplete SRF"></apex:selectOption>
+          <apex:selectOption itemLabel="Deny" itemValue="Deny"></apex:selectOption>
+      </apex:selectRadio>
+      <apex:inputHidden value="{!case.IntStatus__c}" id="hiddenField"/>
+      <apex:commandButton action="{!save}" onclick="refreshConsole()" value="Submit" />
+
+
+    <script type="text/javascript"> 
+    function refreshConsole()
+    {
+         window.top.location='/console';
+    }
+    function radioval()
+    {
+    var myradios = document.getElementsByName('{!$Component.theRadio}');
+    for(i = 0; i < myradios.length; i++)
+        {
+    if(myradios[i].checked) {
+        // now we now the selected index
+        //alert('Selected value is: ' + myradios[i].value);
+        document.getElementById('{!$Component.theForm}').elements['{!$Component.hiddenField}'].value = myradios[i].value;
+    }    
+    }   
+    }
+    </script>  
+      </apex:form>
+</apex:page>

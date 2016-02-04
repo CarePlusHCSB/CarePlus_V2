@@ -1,0 +1,14 @@
+<apex:page showHeader="false" standardController="Case" extensions="PagePreviewerController" tabStyle="Account">
+ <apex:form style="overflow:auto;width:550px; height:175px">
+ <apex:pageBlock title="Prior Authorization">
+<apex:pageBlockTable value="{!pa}" var="p" id="pbTable1" rendered="true">
+<apex:column headerValue="Name" value="{!p.name}"/>
+<apex:column value="{!p.Prior_Auth__c}"/>
+<apex:column value="{!p.Date_of_Approval__c}"/>
+<apex:column value="{!p.Decision__c}"/>
+<apex:column value="{!p.Prior_Auth_Desc__c}"/>
+<apex:column value="{!p.Prior_Auth_Ref__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

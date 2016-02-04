@@ -1,0 +1,87 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0">
+<script>
+function doSearch()
+{
+    var searchStr = document.getElementById('txtSearch').value;
+    window.open('/_ui/search/ui/UnifiedSearchResults?str=' + encodeURIComponent(searchStr) + '&isdtp=vw', "_blank" );
+}
+</script>
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <apex:includeScript value="{!URLFOR($Resource.jqueryt)}" />
+</head>
+
+<body border="1">
+     
+    <div class="slds">
+      <div class="slds-page-header" role="banner" style="background-color:rgb(33,156,215);width:1424px;height:90px;">
+          <div class="slds-grid">
+          
+               <table width="100%" border="0">
+                  <tr>
+                    <td width="18%" height="39" valign="top">
+                    <div class="slds-col">
+                          <a href="/apex/CarePlusConsole_HomePage_1" title="Home">
+                          <!--<span class="slds-avatar slds-avatar--medium" style="background-color:#fff;text-align:center;">-->
+                          <span class="slds-avatar slds-avatar--large">
+                          <img src="/servlet/servlet.ImageServer?id=01555000000fckj&oid=00D550000005aVJ&lastMod=1449842061000" alt="person name"  />
+                          </span>
+                         </a>
+                      </div>
+                    </td>
+                    <td width="6%">&nbsp;</td>
+                    <td width="65%" valign="top">
+                    <div class="slds-align-right slds-col">          
+                                  
+                              <input type="Search" id="txtSearch" placeholder="Search" style="width:580px;height:30px"/>
+                              <button  aria-haspopup="true" onclick="doSearch()">
+                              <svg aria-hidden="true" class="slds-button__icon" >
+                              <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                              </svg>
+                              </button>
+                            </div>
+                    </td>
+                    <td width="2%">&nbsp;</td>
+                    <td width="2%" valign="top">
+                        <div class="slds-button-space-left" aria-haspopup="true" style="background-color:#fff;">
+                              <a href="/ui/setup/Setup?setupid=PersonalSetup&isdtp=vw" target="_blank" title="Setup">
+                              <button class="slds-button slds-button--icon-more" aria-haspopup="true">
+                              <svg aria-hidden="true" class="slds-button__icon">
+                              <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#setup"></use>
+                              </svg>
+                              </button>
+                              </a>
+                            </div>
+                    </td>
+                    <td width="2%" valign="top">
+                        <div class="slds-button-space-left" aria-haspopup="true" style="background-color:#fff;">
+                                  <a href="/secur/logout.jsp" title="logout">
+                                  <button class="slds-button slds-button--icon-more" aria-haspopup="true">
+                                  <svg aria-hidden="true" class="slds-button__icon">
+                                  <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#logout"></use>
+                                  </svg>
+                                  </button>
+                                  </a>
+                                </div>
+                    </td>
+                    <td width="5%">&nbsp;</td>
+                  </tr>
+                </table>       
+           
+
+      </div>
+                 
+  </div>  
+            
+  </div>
+          
+
+
+</body>
+
+</html>
+</apex:page>

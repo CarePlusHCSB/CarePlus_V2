@@ -1,0 +1,78 @@
+<apex:page sidebar="false" showHeader="false" controller="myMembersCtrl">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+   
+                     <!----------Lightning Design system ---------->
+<div class="slds">                     
+<div class="slds-card" style="display:block;background-color: rgb(33,156,215);height:300px;">
+  <div class="slds-card__header slds-grid">
+    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+      <div class="slds-media__figure">
+        <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact">
+          <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
+        </svg>
+      </div>
+      <div class="slds-media__body">
+        <span class="slds-truncate" style="color: #fff;font-family: arial, sans-serif;font-size: 14px;">
+       <b> My Members </b> </span>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="slds-card__body">
+    <ul>
+    <apex:repeat value="{!memberslist}" var="memList">
+      <div class="slds-card" style="background-color:#fff;">
+       <li class="slds-tile slds-hint-parent">
+        <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+        <span class="slds-avatar slds-avatar--circle slds-avatar--small">
+          <apex:outputText value="{!memList.profilePic__c}" escape="false" style="height:30px;width:30px;"/>
+          </span>
+          <a href="/apex/CarePlus_ViewMemberInfo_withHeader?id={!memList.Id}">
+          <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small slds-shrink-none">
+            <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+              <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">Show More</span>
+          </button>
+          </a>
+        </div>
+        <div class="slds-tile__detail">
+          <dl class="slds-dl--horizontal slds-text-body--small">
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" style="color: #000;">Name:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" style="color: #000;">{!memList.Name}</span>
+            </dd>
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" style="color: #000;">Age:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" style="color: #000;">{!memList.Age__c}</span>
+            </dd>
+          </dl>
+        </div>
+      </li>
+      </div>
+     </apex:repeat>
+    </ul>
+  </div>
+  
+  <div class="slds-card__footer"><a href="/apex/MyMembers">
+  
+      <apex:form >
+      <a href="/apex/ViewAllMembers" style="text-decoration:none;">
+      <span class="slds-truncate" style="color: #fff;"> View All </span> </a>
+      </apex:form>
+   <span class="slds-assistive-text">entity type</span></a></div>
+</div>      
+</div>      
+        
+</html>
+<script>
+
+</script>
+</apex:page>

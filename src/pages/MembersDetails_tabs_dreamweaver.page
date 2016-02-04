@@ -1,0 +1,227 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" standardController="Account">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <apex:includeScript value="{!URLFOR($Resource.jqueryt)}" />
+</head>
+<body>
+     
+    <div class="slds">
+  
+   <div class="slds-tabs--default" >
+   <ul class="slds-tabs--default__nav" role="tablist">
+       
+       
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;width:210px;">
+       <li class="slds-tabs__item" title="Additional Information" role="presentation" >
+       <a href="#" role="tab" id="Tab1" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" onclick="selectTab(this);">
+       <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+       <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#record"></use>
+       </svg><span class="slds-truncate" style="color: #fff">Additional Information</span>
+       </a></li></div>
+        
+        <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;">
+        <li class="slds-tabs__item" title="Journal" role="presentation" >
+        <a href="#" role="tab" id="Tab2" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-insights slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#insights"></use>
+        </svg><span class="slds-truncate" style="color: #fff">Journal</span>
+        </a></li></div> 
+        
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;">
+        <li class="slds-tabs__item" title="Episodes" role="presentation" >
+        <a href="#" role="tab" id="Tab3" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-event slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_event"></use>
+        </svg><span class="slds-truncate" style="color: #fff">Episodes</span>
+        </a></li></div>
+        
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;">
+        <li class="slds-tabs__item" title="Cases" role="presentation" >
+        <a href="#" role="tab" id="Tab4" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-case slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_case"></use>
+        </svg><span class="slds-truncate" style="color: #fff">Cases</span>
+        </a></li></div>
+        
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;">
+        <li class="slds-tabs__item" title="Lab Records" role="presentation" >
+        <a href="#" role="tab" id="Tab5" tabindex="-1" aria-selected="false" aria-controls="tab-default-5" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-household slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom97"></use>
+        </svg><span class="slds-truncate" style="color: #fff">Lab Records</span>
+        </a></li></div>
+        
+        <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;">
+        <li class="slds-tabs__item" title="Medical Records" role="presentation" >
+         <a href="#" role="tab" id="Tab7" tabindex="-1" aria-selected="false" aria-controls="tab-default-7" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom94"></use>
+        </svg><span class="slds-truncate" style="color: #fff">Medical Records</span>
+        </a>
+        </li></div>
+        
+        <!---------new code for overflow-------->
+        
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;height: 50px">
+        <li class="slds-dropdown-trigger slds-tabs--default__item slds-tabs__item--overflow" title="More" role="presentation">
+        <a class="slds-tabs--default__link" href="#" aria-haspopup="true">
+        <span class="slds-truncate" style="color: #fff">More</span> 
+        <span class="slds-assistive-text">search results</span>
+        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--x-small">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#down"></use></svg>
+        </a>
+        <div class="slds-dropdown slds-dropdown--medium slds-dropdown--right slds-dropdown--overflow slds-dropdown--menu">
+        <ul class="slds-dropdown__list" role="menu">
+         
+         <li id="menu-2-2" title="Pharmacy Records"  class="slds-dropdown__item">
+           <a href="#" role="tab" id="Tab6" tabindex="-1" aria-selected="false" aria-controls="tab-default-6" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-insights slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom86"></use>
+        </svg>Pharmacy Records
+        </a>
+          </li>
+          <li id="menu-3-3" title="Claims" class="slds-dropdown__item">
+            <a href="#" role="tab" id="Tab8" tabindex="-1" aria-selected="false" aria-controls="tab-default-8" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-quotes slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#quotes"></use>
+        </svg>Claims
+        </a>
+          </li>
+          <li id="menu-4-4" title="mRNA Analysis" class="slds-dropdown__item">
+            <a href="#" role="tab" id="Tab9" tabindex="-1" aria-selected="false" aria-controls="tab-default-9" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom96"></use>
+        </svg>mRNA Analysis
+        </a>
+          </li>
+          <li id="menu-5-5" title="Activity Analysis" class="slds-dropdown__item ">
+           <a href="#" role="tab" id="Tab10" tabindex="-1" aria-selected="false" aria-controls="tab-default-10" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-feed slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#feed"></use>
+        </svg>Activity Analysis
+        </a>
+          </li>
+          <li id="menu-6-6" title="Cardio Analysis" class="slds-dropdown__item">
+            <a href="#" role="tab" id="Tab11" tabindex="-1" aria-selected="false" aria-controls="tab-default-11" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-feed slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom25"></use>
+        </svg>Cardio Analysis
+        </a>
+          </li>
+          <li id="menu-6-6" title="Blood Glucose" class="slds-dropdown__item">
+            <a href="#" role="tab" id="Tab12" tabindex="-1" aria-selected="false" aria-controls="tab-default-11" onclick="selectTab(this);">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-event slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_custom74"></use>
+        </svg>Blood Glucose Analysis
+        </a>
+          </li>
+        </ul>  
+        </div>
+        </li>
+        </div>   
+       <!----End of Overflow-------> 
+        
+        </ul>
+
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab1">
+      <div class="slds-card" style="background-color: white;">
+       <apex:detail subject="{!account.id}" relatedList="false" title="false"/>
+         </div>
+      </div>
+
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab2">
+      <apex:relatedList list="ActivityHistories" />
+      <apex:relatedList list="CombinedAttachments"/>
+      <apex:relatedList list="OpenActivities"/>
+      </div>
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab3">
+       <apex:relatedList list="Episodes__r" />
+      </div>
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab4">
+       <apex:relatedList list="Cases" />
+      </div>
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab5">
+      <apex:relatedList list="Lab_Records__r" />
+      </div>
+     
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab6">
+      <apex:relatedList list="Pharmacy_Records__r" />
+       </div>
+      
+     
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab7">
+      <apex:relatedList list="Medical_Records__r" /> 
+      </div>
+      
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab8">
+       <apex:relatedList list="Claims__r" />
+      </div>
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab9">
+       <apex:iframe src="/apex/mRNA_Analysis" scrolling="true" id="themRNAIframe"/>
+      </div>
+     
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab10">
+      <apex:iframe src="/apex/AvtivityReport_VF" scrolling="true" id="theActivityIframe"/>
+      </div>
+      
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab11">
+       <apex:iframe src="/apex/SleepReport_VF" scrolling="true" id="theSleepIframe"/>
+      </div>
+      
+      <div class="slds-tabs__content slds-hide slds-text-body--small" role="tabpanel" aria-labelledby="Tab12">
+       <apex:iframe src="/apex/BloodGlucoseAnalysis" scrolling="true"/>
+      </div>
+      
+      
+     
+ 
+  </div>
+ </div>
+ 
+ </body>
+
+<script>
+    function selectTab(elmnt) {
+        // slds-active
+        $(elmnt).parent("li").siblings(".slds-active").removeClass("slds-active");
+        $(elmnt).parent("li").addClass("slds-active");
+        
+        // tabindex
+        $(elmnt).parent("li").siblings().children("a").attr("tabindex", -1);
+        $(elmnt).attr("tabindex", 0);
+        
+        // aria-selected
+        $(elmnt).parent("li").siblings().children("a").attr("aria-selected", false);
+        $(elmnt).attr("aria-selected", true);
+        
+        // hiding previouly selected tab (slds-show/slds-hide)
+        $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").addClass("slds-hide");
+        $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").removeClass("slds-show");
+        // displaying newly selected tab (slds-show/slds-hide)
+        $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").addClass("slds-show");
+        $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").removeClass("slds-hide");
+    }
+    
+    
+</script>
+
+
+</html>
+</apex:page>

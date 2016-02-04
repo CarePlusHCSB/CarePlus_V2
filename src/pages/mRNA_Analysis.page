@@ -1,0 +1,8 @@
+<apex:page sidebar="false" showHeader="false" >
+<!--<apex:iframe src="https://miroculus.com/lab/stats/red.php" scrolling="true" id="theFrame"/>-->
+
+<div>
+<iframe scrolling="no" src="https://miroculus.com/lab/stats/red.php" style="height:1200px; margin-top:-90px;width:1200px;">
+</iframe>
+</div>
+</apex:page>

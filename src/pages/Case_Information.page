@@ -1,0 +1,131 @@
+<apex:page sidebar="false" showHeader="false" standardController="Case" extensions="CaseDetailsCtrl" >
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleM{
+
+background: rgb(33,156,215);
+padding: 4.5px;
+}
+.headerTitleM1{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+margin-top:5px;
+margin:0;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+      
+<!--new code Lightning for Member overview-->
+
+        <div class="slds">
+            <div class="slds-card" style="background-color: rgb(33,156,215);">
+                <div class="slds-card__header slds-grid" style="background-color: rgb(33,156,215);">
+                 <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                  <span class="headerTitleC">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon__container slds-icon-standard-account">
+                        <svg aria-hidden="true" class="slds-icon" >
+                        <!--<use xlink:href="/resource/1449655570000/slds0120/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>-->
+                        <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#new_contact"></use>
+                        </svg></span>
+                    </div>  </span>  <span class="headerTitleM1">
+                  <div class="slds-media__body" style="background-color: rgb(33,156,215);">
+                    <span class="slds-truncate"><b>Case Information</b>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     </span>
+                  </div></span>
+                 </div>
+                </div>
+         
+               <table>
+                   <tr>
+                   <td width="5%"></td>
+                   <td>    
+                  <dl class="dl--horizontal slds-text-body--small">
+                    <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                      <span class="slds-truncate" style="color: #fff">CaseNumber:</span>
+                    </dt>
+                   <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <span class="slds-truncate" style="color: #fff">{!caseObj.CaseNumber}</span>
+                    </dd>
+                    </div>
+                    
+                    <div style="height:23px;"><dt class="slds-dl--horizontal__label">
+                      <span class="slds-truncate" style="color: #fff">Subject:</span>
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <span class="slds-truncate" style="color: #fff">{!caseObj.Subject}</span>
+                    </dd>
+                    </div>
+                    
+                    <div style="height:25px;"><dt class="slds-dl--horizontal__label">
+                      <span class="slds-truncate" style="color: #fff">Type:</span>
+                    </dt>
+                   <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                   <span class="slds-truncate" style="color: #fff">{!caseObj.Type}</span>
+                     <!-- <span class="slds-truncate">{!strDOB}</span>-->
+                    </dd>
+                    </div>
+                    <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                      <p class="slds-truncate" style="color: #fff">Case Origin:</p>
+                    </dt>
+                 <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <p class="slds-truncate" style="color: #fff">{!caseObj.Origin}</p>
+                    </dd>
+                    </div>
+                    <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                      <p class="slds-truncate" style="color: #fff">Status:</p>
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <p class="slds-truncate" style="color: #fff">{!caseObj.Status}</p>
+                    </dd></div>
+                    
+                   <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                      <p class="slds-truncate" style="color: #fff">Priority:</p>
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <p class="slds-truncate" style="color: #fff">{!caseObj.Priority}</p>
+                    </dd></div>
+                    
+                <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                      <p class="slds-truncate" style="color: #fff">Case Queue:</p>
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <p class="slds-truncate" style="color: #fff">{!caseObj.Case_Queue__c}</p>
+                    </dd></div>
+                
+               <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                   <!--   <p class="slds-truncate">Start Date:</p>-->
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <!--<p class="slds-truncate">{!acctLst[0].Start_Date__c}</p>
+                      <p class="slds-truncate">{!strStartDate}</p>-->
+                    </dd></div>
+                  <div style="height:22px;"><dt class="slds-dl--horizontal__label">
+                    <!--  <p class="slds-truncate">End Date:</p>-->
+                    </dt>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                      <!--<p class="slds-truncate">{!acctLst[0].End_Date__c}</p>
+                      <p class="slds-truncate">{!strEndDate}</p>-->
+                    </dd></div>
+
+                   <div style="height:38px;display:block;"/>
+                 </dl>
+                 </td>
+             </tr>
+             </table>
+             
+            </div>
+            
+          </div>  
+
+</html>    
+</apex:page>

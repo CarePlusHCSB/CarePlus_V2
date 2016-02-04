@@ -1,0 +1,23 @@
+<apex:page controller="MsgngNReportsCtrl" showHeader="false">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+<apex:form >
+<div class="slds" style="color:white;padding:20px;background:rgb(33,156,215);height:200px;">
+
+<apex:repeat value="{!endorsement}" var="e">
+ <a href ="/{!e.id}" target="_blank" style="color: #fff"> <b> # &nbsp; </b>
+ <apex:outputText >{!e.Name}&nbsp;in &nbsp; </apex:outputText>
+ <apex:outputText >{!e.Location__c}.&nbsp; Time: &nbsp;</apex:outputText>
+ <apex:outputText >{!e.Date__c}</apex:outputText>
+ 
+<br/>
+</a>
+
+</apex:repeat>
+
+ <!-- <apex:outputText > Aetna's next BIG Conference in LA; You are Invited</apex:outputText>-->
+
+
+</div>  
+</apex:form>
+</apex:page>

@@ -1,0 +1,183 @@
+<apex:page controller="GoalCtrl" action="{!getMemberGoal}"  sidebar="false" showHeader="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+.headerTitleCP{
+
+font-size: 14px;
+color: #fff!important;
+text-align: left;
+background: rgb(33,156,215);
+display: block;
+padding: 10px;
+}
+.buttonclass{
+color:white !important;
+background:rgb(33,156,215) !important;
+
+}
+</style>
+<!--<style>
+/*.buttonclass{
+background:LightBlue;width:100px;
+//font-weight:bold;
+
+}
+ .fsWrapper{
+width: 308px;
+margin: 0 auto;
+}
+.headerTitle{
+font-family: arial, sans-serif;
+font-size: 14px;
+//font-style: bold; 
+//font-weight: 600;
+color: #fff!important;
+text-align: left;
+//text-transform: uppercase;
+background: #236FBD;
+display: block;
+padding: 10px;
+margin:0;
+}
+.dataTable table{
+
+font-family: arial, sans-serif;
+border: solid 1px #E0E3E5;
+border-collapse: collapse;
+
+}
+.dataTable  th{
+background: #999999;
+font-family: arial, sans-serif;
+border-top: solid 1px #E0E3E5;
+border-right: solid 1px #E0E3E5;
+color: #fff;
+font-size: 1.2em;
+font-weight: normal;
+padding: 11px 2px 10px 5px;
+
+}
+.dataTable td {
+border-top: solid 1px #E0E3E5;
+border-right: solid 1px #E0E3E5;
+font-family: arial, sans-serif;
+color: #797979;
+font-size: 11px;
+//background: #797979;
+
+padding: 5px 2px 5px 5px;
+
+}
+   
+</style>-->
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<!--<apex:form styleClass="fsWrapper">
+    <apex:outputPanel id="thePanel" styleClass="dataTable">
+   
+    <apex:pageBlock >
+        
+        <span class="headerTitle"> Goals</span>
+            
+        
+        <apex:pageBlockTable value="{!goalLst}" var="g">
+          
+          <apex:column value="{!g.Outcome_Status2__c}" headerValue="Outcome"/>
+                   
+          <apex:column headerValue="Care Plan"> <a href="/{!g.Id}" style="text-decoration: none;"> {!g.Goal_Name__c}</a>
+          </apex:column>
+                
+          
+          <apex:column value="{!g.Intervention__c}" headerValue="Intervention" />
+            
+           
+
+        </apex:pageBlockTable> 
+        
+       <center>  <apex:commandButton value="Set a Goal" action="{!createGoal}"  styleClass="buttonclass"/></center>
+
+ </apex:pageBlock> 
+ </apex:outputPanel>
+ 
+</apex:form>
+
+<apex:form styleClass="fsWrapper">
+    <apex:outputPanel id="thePanel" styleClass="dataTable">
+       
+        
+         <apex:pageBlock >
+         
+         <span class="headerTitle">Past Goals</span>
+
+         <apex:pageBlockTable value="{!goalCloseLst}" var="gc" styleClass="container">
+        
+          <apex:column value="{!gc.Outcome_Status2__c}" />
+          <apex:column headerValue="Care Plan"> <a href="/{!gc.Id}" style="text-decoration: none;"> {!gc.Goal_Name__c}</a>
+          </apex:column>
+          
+          <apex:column value="{!gc.Intervention__c}"/>
+
+
+        </apex:pageBlockTable> 
+
+    </apex:pageBlock> 
+    </apex:outputPanel>
+    </apex:form>  -->
+    
+   <!-----using Lightning Design system----->
+      
+<Div class="slds">
+
+                  
+            <apex:pageblock >
+        
+        <div class="slds-media__body">
+                  <span class="headerTitleCP">
+                  Goals</span>
+                  </div>
+        
+        <div class="slds-text-body--small">
+        <apex:pageBlockTable value="{!goalLst}" var="g">
+          
+          <apex:column value="{!g.Outcome_Status2__c}" headerValue="Outcome"/>
+                   
+          <apex:column headerValue="Care Plan"> <a href="/{!g.Id}" style="text-decoration: none;"> {!g.Goal_Name__c}</a>
+          </apex:column>
+                
+          
+          <apex:column value="{!g.Intervention__c}" headerValue="Intervention" />
+            
+           
+
+        </apex:pageBlockTable> 
+        </div>
+        <apex:form >
+        <br/>
+       <center>  <apex:commandButton value="Set a Goal" action="{!createGoal}"  styleClass="buttonclass"/></center>
+        </apex:form>
+        
+        <br/>
+        
+
+         <div class="slds-media__body">
+                  <span class="headerTitleCP">
+                  Past Goals</span>
+                                    </div>
+         <div class="slds-text-body--small">
+         <apex:pageBlockTable value="{!goalCloseLst}" var="gc" styleClass="container">
+        
+          <apex:column value="{!gc.Outcome_Status2__c}" />
+          <apex:column headerValue="Care Plan"> <a href="/{!gc.Id}" style="text-decoration: none;"> {!gc.Goal_Name__c}</a>
+          </apex:column>
+          
+          <apex:column value="{!gc.Intervention__c}"/>
+
+
+        </apex:pageBlockTable> 
+        </div>
+        
+            </apex:pageblock>
+
+</div>
+
+</html>                                                         
+</apex:page>

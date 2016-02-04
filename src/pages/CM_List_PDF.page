@@ -1,0 +1,26 @@
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false" standardController="Case" recordSetVar="cases" renderAs="PDF">
+
+<apex:pageBlock title="List of Cases">
+        <apex:form id="theForm">
+        <table width="100%" >
+      <tr><td width="33%" class="heading">Case Number</td><td align="center" width="33%" class="heading">Subject</td><td align="right" width="33%" class="heading">Status</td></tr>
+        <apex:repeat var="c" value="{!cases}">
+        
+          <tr>
+            <td width="33%" class="case_text content">
+              <a href="/{!c.Id}">{!c.CaseNumber}</a>
+              
+            </td>
+            <td align="center" width="33%" class="case_text content">
+              <apex:outputText value="{!c.Subject}" escape="false" />
+            </td>
+            <td align="right" width="33%" class="case_text content">
+              <apex:outputText value="{!c.Status}" escape="false" />
+            </td>
+          </tr>
+          <tr><td colspan="3" style=" border-bottom-style: dashed; border-bottom-color:#FFA500; border-bottom-width: 1px;"></td></tr>
+</apex:repeat>
+</table>
+        </apex:form>
+       </apex:pageBlock>
+ </apex:page>

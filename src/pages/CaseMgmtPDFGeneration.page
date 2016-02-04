@@ -1,0 +1,5 @@
+<apex:page standardController="Case">
+    <apex:form >
+  <apex:commandButton value="Generate PDF" onclick="window.location='/apex/CM_List_PDF'; return false;" />
+      </apex:form>
+</apex:page>

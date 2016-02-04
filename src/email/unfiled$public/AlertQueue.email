@@ -1,0 +1,3 @@
+Dear {!User.FirstName},
+
+The Case {!Case.CaseNumber}  has not been acted upon since the past three hours. Kindly check and take appropriate action.

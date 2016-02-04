@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Medical Records</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Medical Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Medical Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Close Reason --></label>
+        <name>Close_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Date --></label>
+        <name>Create_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Diagnosis --></label>
+        <name>Diagnosis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Diease --></label>
+        <name>Diease__c</name>
+        <picklistValues>
+            <masterLabel>Alzheimer patient</masterLabel>
+            <translation><!-- Alzheimer patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heart Patient</masterLabel>
+            <translation><!-- Heart Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage</masterLabel>
+            <translation><!-- Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prone to Stress</masterLabel>
+            <translation><!-- Prone to Stress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Health Plan ID --></label>
+        <name>Health_Plan_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Plan --></label>
+        <name>Health_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member ID --></label>
+        <name>Member_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Date --></label>
+        <name>Open_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Reason --></label>
+        <name>Open_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Medical Record # --></label>
+        <name>Patient_Medical_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Name --></label>
+        <name>Patient_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physician --></label>
+        <name>Physician__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Id --></label>
+        <name>Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update Date --></label>
+        <name>Update_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- tzix_id --></label>
+        <name>tzix_id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

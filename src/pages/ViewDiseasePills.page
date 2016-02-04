@@ -1,0 +1,69 @@
+<apex:page showHeader="False" sidebar="False" standardController="Account"  extensions="pillController">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<!--<apex:includeScript value="{!URLFOR($Resource.svg4everybody)}"/>-->
+<script type="javascript" src="/resource/1449216126000/svg4everybody/svg4everybody.min.js"/>
+
+<script type="text/javascript">
+
+ function js_function(pills) { removePillsFunction(pills);
+  alert("Confirm to remove " + pills);
+     } 
+ 
+ function refreshPage(actId){
+ 
+//alert("refresh called"+actId);
+//window.location.assign="https://c.cs41.visual.force.com/apex/ViewDiseasePills?Id=actId";
+//window.opener.location.reload(true);//window.self.close();
+setTimeout(function(){document.location.href = "https://c.cs41.visual.force.com/apex/CarePlus_ViewMemberInfo_withHeader?Id="+actId},1);
+
+ } 
+ 
+ function addPill(){
+     
+    setTimeout(function(){document.location.href = "https://c.cs41.visual.force.com/apex/addDiseasePills?id="+'{!$CurrentPage.Parameters.id}'},1);
+ 
+ } 
+ 
+  
+</script>
+
+<body style="background-color:#73D6EA">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<apex:form >
+
+<apex:actionFunction name="removePillsFunction" action="{!removePills}" oncomplete="refreshPage('{!$CurrentPage.parameters.Id}')">
+<apex:param name="deletePill" assignTo="{!selectedPill}" value=""/>
+</apex:actionFunction>
+
+<apex:OutputPanel id="pillsDisplay">
+            <div class="slds">
+            <apex:repeat value="{!pillData}" var="Pills">
+                  
+                  <a class="slds-pill" style="background: rgb(33,156,215)">
+                  <span class="slds-pill__label" style="color: #fff">{!Pills}</span>
+                  <button id="clickMe" onclick="js_function(this.value)" value="{!Pills}" class="slds-button slds-button--icon-bare slds-pill__remove" style="color: #fff">
+                  <svg aria-hidden="true" class="slds-button__icon" >
+                  <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Remove</span>
+                  </button>
+                  </a>
+                                   
+            </apex:repeat>
+            <a class="slds-pill" style="background: rgb(33,156,215)">
+            <button id="clickMeToAdd" onclick="addPill()" class="slds-button slds-button--icon-bare slds-pill__remove" style="color: #fff">   
+            <svg aria-hidden="true" class="slds-button__icon" >
+            <use xlink:href="/resource/1449655570000/slds0120/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+            </svg>
+            </button>
+            </a>
+           </div>
+</apex:OutputPanel>
+</apex:form>
+</body>
+
+</html>  
+</apex:page>

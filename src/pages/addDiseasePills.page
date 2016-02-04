@@ -1,0 +1,30 @@
+<apex:page standardController="Account" extensions="addDiseasePillsctrl" showHeader="false" sidebar="false">
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+<script type="text/javascript">
+    function goback(){
+    window.location.href = '\CarePlus_ViewMemberInfo_withHeader?id='+'{!$CurrentPage.Parameters.id}';
+    }
+</script>
+<apex:include pageName="CarePlus_Global_header_1"/>
+<div class="slds">
+
+<apex:form >
+<apex:PageBlock >
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem >
+<apex:selectList value="{!pillsSelected}" multiselect="true">
+<apex:selectOptions value="{!pillsToBeAdded}"  />
+</apex:selectList>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Select to Save" action="{!savePill}" onComplete="goback();"/>
+<apex:commandButton value="Cancel" onclick="goback();" onComplete="goback();"/>
+</apex:pageBlockButtons>
+
+</apex:PageBlock>
+</apex:form>
+</div>
+
+</apex:page>

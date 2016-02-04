@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prior Authorization</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prior Authorizations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date of Approval --></label>
+        <name>Date_of_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>Decision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Auth Desc. --></label>
+        <name>Prior_Auth_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Auth Ref. --></label>
+        <name>Prior_Auth_Ref__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Prior_Auth__c</name>
+        <relationshipLabel><!-- Prior Authorizations --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

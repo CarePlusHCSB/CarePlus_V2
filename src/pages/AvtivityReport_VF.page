@@ -1,0 +1,55 @@
+<apex:page sidebar="false" showHeader="false">
+<style>
+
+.headerTitle{
+//font-family: arial, sans-serif;
+font-size: 14px;
+//font-weight: 600;
+text-align: center;
+display: block;
+color: rgb(33,156,215);
+margin:0;
+}
+
+.headerTitle4{
+//font-family: arial, sans-serif;
+font-size: 14px;
+//font-style: bold; 
+//font-weight: 600;
+color: rgb(33,156,215);
+text-align: Center;
+//text-transform: uppercase;
+//background: rgb(33,156,215);
+display: block;
+padding: 10px;
+//margin:0.2em;
+//width: 400px;
+}
+
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<table >
+<br/>
+<tr >
+<th>
+<span class="headerTitle4">
+     <h2>Current Location</h2>
+</span>
+</th>
+<th/>
+<th>
+<span class="headerTitle4">
+     <h2>Activity Analysis</h2>
+</span>
+</th>
+</tr>
+
+<tr><td><apex:image value="https://c.cs41.visual.force.com/resource/1449750319000/Googlmap" width="400px" height="440px"/></td>
+
+<td width="2px"></td>
+<td width="400px" height="300px"><analytics:reportChart reportId="00O55000000Jb8K"></analytics:reportChart></td></tr>
+
+
+
+</table>
+</apex:page>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Auth_Code_Id__c</fullName>
+        <description>Code id for the authorization</description>
+        <externalId>false</externalId>
+        <label>Auth Code Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_To_Affiliation_Id__c</fullName>
+        <description>Provider pay to affiliation id</description>
+        <externalId>false</externalId>
+        <label>Pay To Affiliation Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_To_Affiliation_Name__c</fullName>
+        <description>Provider affiliation name</description>
+        <externalId>false</externalId>
+        <label>Pay To Affiliation Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Refer_From_Entity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Refer from Provider entity id</description>
+        <externalId>false</externalId>
+        <label>Refer From Entity</label>
+        <referenceTo>Provider__c</referenceTo>
+        <relationshipLabel>Authorization</relationshipLabel>
+        <relationshipName>Authorization</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Refer_To_Entity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Refer to Provider entity id</description>
+        <externalId>false</externalId>
+        <label>Refer To Entity</label>
+        <referenceTo>Provider__c</referenceTo>
+        <relationshipLabel>Authorization (Refer to Entity)</relationshipLabel>
+        <relationshipName>Authorization1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_From__c</fullName>
+        <description>Service start date for the case</description>
+        <externalId>false</externalId>
+        <label>Service From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_To__c</fullName>
+        <description>Service end date for the case</description>
+        <externalId>false</externalId>
+        <label>Service To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Authorization</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AUTH{00000000}</displayFormat>
+        <label>Auth Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Authorization</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

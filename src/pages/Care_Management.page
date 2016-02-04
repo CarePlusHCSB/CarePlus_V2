@@ -1,0 +1,84 @@
+<apex:page standardController="Case" extensions="TreeViewDemo" showHeader="false" sidebar="false">
+<!-- Include the Jquery Script files -->
+    <link rel="stylesheet" href="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.treeview.css')}"/>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.js')}" type="text/javascript"></script>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.cookie.js')}" type="text/javascript"></script>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.treeview.js')}" type="text/javascript"></script>
+<!-- End of Javascript files -->
+<script type="text/javascript">
+        $(function() {
+            $("#tree").treeview({
+                collapsed: false,
+                animated: "medium",
+                control:"#sidetreecontrol",
+                persist: "location"
+            });
+        })
+</script>
+<br/> <br/> <br/>
+
+<apex:form >
+<apex:pageBlock >
+
+<!--Input for selection of Template -->
+<!-- commented 
+<apex:PageblockSection columns="1" >
+    <apex:PageBlockSectionItem >
+          <apex:outputLabel value="Select Care Management Template"/>
+          <apex:actionRegion >
+          <apex:inputField value="{!Case.CM_Template__c}">
+          </apex:inputField>
+          </apex:actionRegion>
+    </apex:PageBlockSectionItem>
+</apex:PageblockSection>
+-->
+
+
+<!-- Tree -->
+<!-- commented
+<div class="treeheader" style="height:0px;">&nbsp;</div>
+<div id="sidetreecontrol"><a href="?#"><font style="color:blue;">Collapse All</font></a> | <a href="?#"><font style="color:blue;">Expand All</font></a></div>
+<ul id="tree">
+    <apex:repeat value="{!mainnodes}" var="parent">
+        <li><strong><apex:outputtext style="color:blue;" escape="false" value="{!parent.gparent.Problem__c}"/></strong>
+             <ul>
+                 <apex:repeat value="{!parent.parent}" var="child">
+                    <li><span class="formattextcon"><apex:outputtext style="color:green;" escape="false" value="{!child.Goal__c}"/></span>
+                        <ul>
+                            <apex:repeat value="{!child.Cases}" var="gchildren">
+                               <li> <span class="formattextcon"> <apex:outputtext escape="false" style="color:red;" value="Intervention"/> <b>||</b> &nbsp;<apex:outputtext escape="false" value="{!gchildren.Intervention__c}"/> </span> </li>
+                               <li> <span class="formattextcon"> <apex:outputtext escape="false" style="color:red;" value="Outcome"/> <b>||</b> &nbsp;<apex:outputtext escape="false" value="{!gchildren.Outcome__c}"/> </span> </li>
+                            </apex:repeat>
+                        </ul>       
+                    </li>
+                 </apex:repeat>  
+             </ul>  
+        </li>
+    </apex:repeat>
+</ul>
+
+-->
+<!-- End of Tree -->   
+
+
+
+<!-- Add Buttons -->
+<apex:commandButton onclick="refreshConsole()" value="Add Problem" />
+<apex:commandButton onclick="refreshConsole()" value="Add Goal" />
+<apex:commandButton onclick="refreshConsole()" value="Add Intervention" />
+<apex:commandButton onclick="refreshConsole()" value="Add Outcome" />
+<apex:commandButton onclick="refreshConsole()" value="Save Care Plan" />
+
+
+<!-- Add Refresh Console -->
+ <script type="text/javascript"> 
+    function refreshConsole()
+    {
+         window.top.location='/console';
+    }
+</script>
+
+<!-- End of Control -->
+</apex:pageBlock>
+</apex:form>    
+</apex:page>

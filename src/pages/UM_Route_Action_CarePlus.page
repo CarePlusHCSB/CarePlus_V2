@@ -1,0 +1,63 @@
+<apex:page StandardController="Case" id="pg" extensions="CaseDetailsCtrl" >
+ <script src="/soap/ajax/29.0/connection.js" type="text/javascript"></script>
+ <script src="/soap/ajax/29.0/apex.js" type="text/javascript"></script>
+  <apex:form id="theForm" >
+      <apex:selectRadio value="{!selectedValue}" layout="pageDirection" id="theRadio" onchange="radioval();">
+          <apex:selectOption itemLabel="Nurse - Incomplete Med Info." itemValue="Incomplete Med Info"></apex:selectOption>
+          <apex:selectOption itemLabel="Nurse" itemValue="Nurse"></apex:selectOption>
+          <apex:selectOption itemLabel="Medical Director" itemValue="Medical Director"></apex:selectOption>
+          <apex:selectOption itemLabel="Denial Coordinator" itemValue="Denial Coordinator" rendered="{!If($Profile.Name=='UM_Nurse',False,True)}"></apex:selectOption>   
+      </apex:selectRadio>
+      
+
+        <!--<apex:selectRadio value="{!selectedValue}">
+            <apex:selectOptions value="{!items}"/>
+        </apex:selectRadio>-->
+            
+
+      <apex:inputHidden value="{!case.IntStatus__c}" id="hiddenField"/>
+     
+     <!--<apex:commandButton action="{!save}" onclick="refreshConsole();" value="Submit" />-->
+     <apex:commandButton action="{!assignCaseToQueue}" value="Submit" />
+   
+    <script type="text/javascript">  
+     <!-- function refreshConsole()        {
+           if(document.getElementById('pg:theForm:hiddenField').value=='Nurse'){
+               //alert('hi');
+                sendEmailfromCase();
+            }
+             window.top.location='/apex/apex/CarePlus_UMCases?id="+actId';
+           
+        } -->
+                
+        function radioval()
+        {
+            var myradios = document.getElementsByName('{!$Component.theRadio}');
+            for(i = 0; i < myradios.length; i++)
+            {
+                if(myradios[i].checked) {
+                // now we now the selected index
+                //alert('Selected value is: ' + myradios[i].value);
+                document.getElementById('{!$Component.theForm}').elements['{!$Component.hiddenField}'].value = myradios[i].value;
+                    } 
+                  
+            }   
+        }
+        function sendEmailfromCase(){
+           sforce.connection.sessionId="{!$Api.Session_ID}";
+            var singleRequest = new sforce.SingleEmailMessage();
+            singleRequest.replyTo = "noreply@salesforce.com";
+            singleRequest.subject = "A Case has been dispatched to the Nurse. #{!case.CaseNumber}";
+            
+            singleRequest.plainTextBody = "Dear Sir,\n\n\n A Case has been dispatched to the Nurse.\n Routed Case number is #{!case.CaseNumber}\n\n\nThank You";
+            singleRequest.toAddresses = ["infosys.healthcareplus@gmail.com"];
+           
+            var sendMailRes = sforce.connection.sendEmail([singleRequest]);    
+            //alert(sendMailRes);
+            //return false;    
+        }
+        
+        
+    </script>  
+      </apex:form>
+</apex:page>

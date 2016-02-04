@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This will be the logo which will be used for the External and Internal Portal</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Health Plus logo</name>
+    <public>true</public>
+</Document>

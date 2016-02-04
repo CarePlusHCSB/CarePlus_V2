@@ -1,0 +1,91 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" standardController="Case">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <apex:stylesheet value="{!URLFOR($Resource.slds0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <apex:includeScript value="{!URLFOR($Resource.jqueryt)}" />
+</head>
+<body>
+     
+    <div class="slds">
+   <div class="slds-card" style="width: 1000px;">
+   <div class="slds-tabs--default" style="width: 1000px;">
+   <ul class="slds-tabs--default__nav" role="tablist" style="width: 1000px;">
+   
+       <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;width:440px;">
+       <li class="slds-tabs__item" title="Additional Information" role="presentation" >
+       <a href="#" role="tab" id="Tab1" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" onclick="selectTab(this);">
+       <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+       <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#record"></use>
+       </svg><span class="slds-truncate" style="color: #fff">Additional Information</span>
+       </a></li></div>
+
+        <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;width:415px;">
+       <li class="slds-tabs__item" title="Additional Information" role="presentation" >
+       <a href="#" role="tab" id="Tab2" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" onclick="selectTab(this);">
+       <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+       <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#record"></use>
+       </svg><span class="slds-truncate" style="color: #fff">Diesease condition</span>
+       </a></li></div>
+        
+        <div style="background-color: rgb(33,156,215);display: inline-block;border:thin solid #A1DDF3;width:400px;">
+       <li class="slds-tabs__item" title="Additional Information" role="presentation" >
+       <a href="#" role="tab" id="Tab3" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" onclick="selectTab(this);">
+       <svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-standard-account slds-m-right--small" preserveAspectRatio="xMidYMid meet">
+       <use xlink:href="/resource/1449655570000/slds0120/assets/icons/action-sprite/svg/symbols.svg#record"></use>
+       </svg><span class="slds-truncate" style="color: #fff">Member Info</span>
+       </a></li></div>
+              
+        </ul>
+
+      
+      <div class="slds-tabs__content slds-show" role="tabpanel" aria-labelledby="Tab1">
+      <div class="slds-card" style="background-color: white;">
+       <apex:detail subject="{!Case.Id}" relatedList="false" title="false"/>
+      </div>
+      </div>
+
+      
+      <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab2">
+      <apex:include pageName="viewcasediseasepills"/>
+      </div>
+     
+      
+     <div class="slds-tabs__content slds-hide" role="tabpanel" aria-labelledby="Tab3">
+       <apex:detail subject="{!Case.AccountId}" relatedList="false" title="false"/>
+      </div>
+     
+ </div>
+  </div>
+ </div>
+ </body>
+
+<script>
+    function selectTab(elmnt) {
+        // slds-active
+        $(elmnt).parent("li").siblings(".slds-active").removeClass("slds-active");
+        $(elmnt).parent("li").addClass("slds-active");
+        
+        // tabindex
+        $(elmnt).parent("li").siblings().children("a").attr("tabindex", -1);
+        $(elmnt).attr("tabindex", 0);
+        
+        // aria-selected
+        $(elmnt).parent("li").siblings().children("a").attr("aria-selected", false);
+        $(elmnt).attr("aria-selected", true);
+        
+        // hiding previouly selected tab (slds-show/slds-hide)
+        $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").addClass("slds-hide");
+        $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").removeClass("slds-show");
+        // displaying newly selected tab (slds-show/slds-hide)
+        $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").addClass("slds-show");
+        $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").removeClass("slds-hide");
+    }
+    
+    
+</script>
+
+
+</html>
+</apex:page>
